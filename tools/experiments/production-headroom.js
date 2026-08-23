@@ -77,7 +77,7 @@ function solveGoldProbe(puzzle, wordIndex, options = {}) {
   });
   const elapsedMs = elapsedMsSince(started);
   if (result.stats?.timedOut) return timeoutResult(threshold, elapsedMs);
-  if (options.timeoutMs !== undefined && elapsedMs >= options.timeoutMs) return timeoutResult(threshold, elapsedMs);
+  if (Number.isFinite(options.timeoutMs) && elapsedMs >= options.timeoutMs) return timeoutResult(threshold, elapsedMs);
   return {
     threshold,
     exact: true,

@@ -1,0 +1,3 @@
+answer,candidate_pool_size,selected_candidate_index,selected_min_gold_turns,selected_headroom_lower_bound,runtime_ms
+WATERMELON,3,0,5,40,4977.68
+WATERMELON,5,1,5,50,5482.653

@@ -1,0 +1,5241 @@
+{
+  "summary": {
+    "config": {
+      "candidatePoolSize": 3,
+      "shortlistSize": 3,
+      "headroomThresholds": [
+        110,
+        120,
+        130,
+        140,
+        150
+      ],
+      "analysisTimeoutMs": 500,
+      "candidateGenerator": "M6_BASELINE",
+      "maxAttemptsPerCandidate": 20,
+      "selectorVersion": "m7b.0"
+    },
+    "answersAnalyzed": 18,
+    "totalCandidatesGenerated": 54,
+    "uniqueCandidates": 54,
+    "m6ValidCandidates": 54,
+    "goldCertifiedCandidates": 54,
+    "minimumGoldTurnDistribution": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 7,
+      "5": 46,
+      "6": 0
+    },
+    "fourOrFewerTurnCount": 8,
+    "fiveTurnCount": 46,
+    "sixTurnCount": 0,
+    "sixTurnAnswers": [],
+    "goldWithoutHexalinkRate": 1,
+    "selectedMinimumGoldTurns": {
+      "min": 5,
+      "max": 5,
+      "mean": 5,
+      "median": 5,
+      "p25": 5,
+      "p75": 5,
+      "p90": 5
+    },
+    "selectedHeadroomLowerBound": {
+      "min": 30,
+      "max": 50,
+      "mean": 38.333333333333336,
+      "median": 40,
+      "p25": 30,
+      "p75": 40,
+      "p90": 50
+    },
+    "medianTotalSelectionMs": 5073.402031
+  },
+  "failures": [
+    {
+      "record": {
+        "answer": "ANCHOVIES",
+        "clue": "Small salty fish",
+        "date": "2027-03-19",
+        "masterSeed": 900018
+      },
+      "error": {
+        "code": "candidatePool.exhausted",
+        "message": "No candidate passed M6 hard gates.",
+        "candidateCount": 3,
+        "uniqueCandidateCount": 0,
+        "duplicateCount": 0,
+        "failureCategories": {
+          "invalid-input": 3
+        },
+        "seed": 900018,
+        "versions": {
+          "selectorVersion": "m7b.0",
+          "generatorVersion": "m6.0",
+          "rulesVersion": "qjynn-rules-local",
+          "vocabularyVersion": "1.0"
+        }
+      }
+    },
+    {
+      "record": {
+        "answer": "APOLOGIZED",
+        "clue": "Said sorry",
+        "date": "2027-03-20",
+        "masterSeed": 900019
+      },
+      "error": {
+        "code": "candidatePool.exhausted",
+        "message": "No candidate passed M6 hard gates.",
+        "candidateCount": 3,
+        "uniqueCandidateCount": 0,
+        "duplicateCount": 0,
+        "failureCategories": {
+          "invalid-input": 3
+        },
+        "seed": 900019,
+        "versions": {
+          "selectorVersion": "m7b.0",
+          "generatorVersion": "m6.0",
+          "rulesVersion": "qjynn-rules-local",
+          "vocabularyVersion": "1.0"
+        }
+      }
+    }
+  ],
+  "selectedManifests": [
+    {
+      "answer": "WATERMELON",
+      "date": "2027-03-01",
+      "masterSeed": 900000,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 0,
+      "selectedCandidateSeed": 1500921837,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1782,
+        "tileParticipationSpread": 1464,
+        "hexalinkMoveParticipationPct": 0.011043622308117063
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "0 headroom lower bound 40; 1 50."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 407.823816,
+        "minimumTurnAnalysisMs": 1846.604394,
+        "shortlistAnalysisMs": 2887.732616,
+        "totalSelectionMs": 5143.236017
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 0,
+          "candidateSeed": 1500921837,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 1500921837,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011043622308117063,
+            "uniqueTileMasks": 1782,
+            "solverRelevantMoves": 1782,
+            "uniquePlayableWords": 6071,
+            "tileParticipationSpread": 1464,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 5,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 105
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "0 headroom lower bound 40; 1 50."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 1,
+          "candidateSeed": 1218590632,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 1218590632,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.01232589670898558,
+            "uniqueTileMasks": 1493,
+            "solverRelevantMoves": 1493,
+            "uniquePlayableWords": 5154,
+            "tileParticipationSpread": 1218,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 105
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 3560161931,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 3560161931,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009111617312072894,
+            "uniqueTileMasks": 2087,
+            "solverRelevantMoves": 2087,
+            "uniquePlayableWords": 7083,
+            "tileParticipationSpread": 2228,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 5,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "OSCILLATED",
+      "date": "2027-03-02",
+      "masterSeed": 900001,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 1,
+      "selectedCandidateSeed": 2097653141,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 130,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 30,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1265,
+        "tileParticipationSpread": 899,
+        "hexalinkMoveParticipationPct": 0.014174344436569808
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "1 headroom lower bound 30; 0 40."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 338.062577,
+        "minimumTurnAnalysisMs": 1895.670879,
+        "shortlistAnalysisMs": 3796.789718,
+        "totalSelectionMs": 6030.668527
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 1,
+          "candidateSeed": 2097653141,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 2097653141,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 130,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                140,
+                150
+              ],
+              "headroomLowerBound": 30,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.014174344436569808,
+            "uniqueTileMasks": 1265,
+            "solverRelevantMoves": 1265,
+            "uniquePlayableWords": 4153,
+            "tileParticipationSpread": 899,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 105
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "1 headroom lower bound 30; 0 40."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 3177632048,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 3177632048,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.00998801438274071,
+            "uniqueTileMasks": 2022,
+            "solverRelevantMoves": 2022,
+            "uniquePlayableWords": 6279,
+            "tileParticipationSpread": 2084,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 914745078,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 914745078,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009551098376313277,
+            "uniqueTileMasks": 2017,
+            "solverRelevantMoves": 2017,
+            "uniquePlayableWords": 5802,
+            "tileParticipationSpread": 2298,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 105
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ABANDONING",
+      "date": "2027-03-03",
+      "masterSeed": 900002,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 0,
+      "selectedCandidateSeed": 318647043,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 130,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 30,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1579,
+        "tileParticipationSpread": 1719,
+        "hexalinkMoveParticipationPct": 0.012283503255128362
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "0 headroom lower bound 30; 1 40."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 339.767117,
+        "minimumTurnAnalysisMs": 1764.669441,
+        "shortlistAnalysisMs": 3604.747178,
+        "totalSelectionMs": 5709.235847
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 0,
+          "candidateSeed": 318647043,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 318647043,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 130,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                140,
+                150
+              ],
+              "headroomLowerBound": 30,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.012283503255128362,
+            "uniqueTileMasks": 1579,
+            "solverRelevantMoves": 1579,
+            "uniquePlayableWords": 4238,
+            "tileParticipationSpread": 1719,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "0 headroom lower bound 30; 1 40."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 1,
+          "candidateSeed": 1449668422,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 1449668422,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009873617693522907,
+            "uniqueTileMasks": 2079,
+            "solverRelevantMoves": 2079,
+            "uniquePlayableWords": 5710,
+            "tileParticipationSpread": 1646,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 298575205,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 298575205,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 4,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.00853315129277242,
+            "uniqueTileMasks": 2448,
+            "solverRelevantMoves": 2448,
+            "uniquePlayableWords": 6715,
+            "tileParticipationSpread": 2797,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 100
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ABSOLUTELY",
+      "date": "2027-03-04",
+      "masterSeed": 900003,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 998562832,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 150,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 50,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1518,
+        "tileParticipationSpread": 1336,
+        "hexalinkMoveParticipationPct": 0.011583458820803891
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "2 Hexalink participation 0.011583458820803891; 0 0.010996261271167802."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 304.640308,
+        "minimumTurnAnalysisMs": 1864.591311,
+        "shortlistAnalysisMs": 2337.444122,
+        "totalSelectionMs": 4506.772416
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 998562832,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 998562832,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011583458820803891,
+            "uniqueTileMasks": 1518,
+            "solverRelevantMoves": 1518,
+            "uniquePlayableWords": 5670,
+            "tileParticipationSpread": 1336,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 120
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "2 Hexalink participation 0.011583458820803891; 0 0.010996261271167802."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 2652849110,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 2652849110,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010996261271167802,
+            "uniqueTileMasks": 1832,
+            "solverRelevantMoves": 1832,
+            "uniquePlayableWords": 5315,
+            "tileParticipationSpread": 1472,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 1,
+          "candidateSeed": 1631217235,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 1631217235,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010041168792047394,
+            "uniqueTileMasks": 1818,
+            "solverRelevantMoves": 1818,
+            "uniquePlayableWords": 4831,
+            "tileParticipationSpread": 2619,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ACCESSIBLE",
+      "date": "2027-03-05",
+      "masterSeed": 900004,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 219530207,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 130,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 30,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1728,
+        "tileParticipationSpread": 1614,
+        "hexalinkMoveParticipationPct": 0.011580775911986103
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "2 headroom lower bound 30; 0 40."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 378.81299,
+        "minimumTurnAnalysisMs": 2018.327216,
+        "shortlistAnalysisMs": 4250.413463,
+        "totalSelectionMs": 6647.622764
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 219530207,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 219530207,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 130,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                140,
+                150
+              ],
+              "headroomLowerBound": 30,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011580775911986103,
+            "uniqueTileMasks": 1728,
+            "solverRelevantMoves": 1728,
+            "uniquePlayableWords": 5360,
+            "tileParticipationSpread": 1614,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "2 headroom lower bound 30; 0 40."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 1690736593,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 1690736593,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.0112145340361108,
+            "uniqueTileMasks": 1618,
+            "solverRelevantMoves": 1618,
+            "uniquePlayableWords": 5369,
+            "tileParticipationSpread": 2178,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 1,
+          "candidateSeed": 519703340,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 519703340,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.006980802792321117,
+            "uniqueTileMasks": 3002,
+            "solverRelevantMoves": 3002,
+            "uniquePlayableWords": 6856,
+            "tileParticipationSpread": 4211,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 105
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ACCOUNTING",
+      "date": "2027-03-06",
+      "masterSeed": 900005,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 1,
+      "selectedCandidateSeed": 3718030937,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 2184,
+        "tileParticipationSpread": 3000,
+        "hexalinkMoveParticipationPct": 0.018703824932198635
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "1 Hexalink participation 0.018703824932198635; 0 0.017230981304385287."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 334.968016,
+        "minimumTurnAnalysisMs": 1940.615482,
+        "shortlistAnalysisMs": 3196.726946,
+        "totalSelectionMs": 5472.373104
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 1,
+          "candidateSeed": 3718030937,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 3718030937,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.018703824932198635,
+            "uniqueTileMasks": 2184,
+            "solverRelevantMoves": 2184,
+            "uniquePlayableWords": 5973,
+            "tileParticipationSpread": 3000,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 2,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "1 Hexalink participation 0.018703824932198635; 0 0.017230981304385287."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 3873394804,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 3873394804,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.017230981304385287,
+            "uniqueTileMasks": 2504,
+            "solverRelevantMoves": 2504,
+            "uniquePlayableWords": 6751,
+            "tileParticipationSpread": 2330,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 1844104026,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 1844104026,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.023285597857724997,
+            "uniqueTileMasks": 1672,
+            "solverRelevantMoves": 1672,
+            "uniquePlayableWords": 4812,
+            "tileParticipationSpread": 1707,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 2,
+            "certificateReplayScore": 120
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ADVENTURES",
+      "date": "2027-03-07",
+      "masterSeed": 900006,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 1,
+      "selectedCandidateSeed": 1968410090,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1946,
+        "tileParticipationSpread": 2055,
+        "hexalinkMoveParticipationPct": 0.010227040294538761
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "1 headroom lower bound 40; 2 50."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 316.486623,
+        "minimumTurnAnalysisMs": 1965.452913,
+        "shortlistAnalysisMs": 2725.73071,
+        "totalSelectionMs": 5007.726691
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 1,
+          "candidateSeed": 1968410090,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 1968410090,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010227040294538761,
+            "uniqueTileMasks": 1946,
+            "solverRelevantMoves": 1946,
+            "uniquePlayableWords": 5212,
+            "tileParticipationSpread": 2055,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "1 headroom lower bound 40; 2 50."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 2,
+          "candidateSeed": 276851241,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 276851241,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011918951132300357,
+            "uniqueTileMasks": 1469,
+            "solverRelevantMoves": 1469,
+            "uniquePlayableWords": 5242,
+            "tileParticipationSpread": 1998,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 0,
+          "candidateSeed": 717995863,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 717995863,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 4,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009660902328277461,
+            "uniqueTileMasks": 1978,
+            "solverRelevantMoves": 1978,
+            "uniquePlayableWords": 6150,
+            "tileParticipationSpread": 2525,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 100
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "AGGRAVATED",
+      "date": "2027-03-08",
+      "masterSeed": 900007,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 1,
+      "selectedCandidateSeed": 4055102695,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1420,
+        "tileParticipationSpread": 969,
+        "hexalinkMoveParticipationPct": 0.012934937265554261
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "1 headroom lower bound 40; 0 50."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 304.630113,
+        "minimumTurnAnalysisMs": 1715.219937,
+        "shortlistAnalysisMs": 2591.882529,
+        "totalSelectionMs": 4611.793304
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 1,
+          "candidateSeed": 4055102695,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 4055102695,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.012934937265554261,
+            "uniqueTileMasks": 1420,
+            "solverRelevantMoves": 1420,
+            "uniquePlayableWords": 5210,
+            "tileParticipationSpread": 969,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 120
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "1 headroom lower bound 40; 0 50."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 1861405754,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 1861405754,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009776126698602014,
+            "uniqueTileMasks": 2138,
+            "solverRelevantMoves": 2138,
+            "uniquePlayableWords": 5745,
+            "tileParticipationSpread": 2243,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 115
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 504883540,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 504883540,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 4,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009902951079421667,
+            "uniqueTileMasks": 2054,
+            "solverRelevantMoves": 2054,
+            "uniquePlayableWords": 6038,
+            "tileParticipationSpread": 1907,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 100
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "AFTERTASTE",
+      "date": "2027-03-09",
+      "masterSeed": 900008,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 1443187907,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 130,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 30,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1516,
+        "tileParticipationSpread": 1763,
+        "hexalinkMoveParticipationPct": 0.012056908608632746
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "2 Hexalink participation 0.012056908608632746; 0 0.010466820180029307."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 274.7177,
+        "minimumTurnAnalysisMs": 1763.741233,
+        "shortlistAnalysisMs": 3942.784016,
+        "totalSelectionMs": 5981.31801
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 1443187907,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 1443187907,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 130,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                140,
+                150
+              ],
+              "headroomLowerBound": 30,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.012056908608632746,
+            "uniqueTileMasks": 1516,
+            "solverRelevantMoves": 1516,
+            "uniquePlayableWords": 5510,
+            "tileParticipationSpread": 1763,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "2 Hexalink participation 0.012056908608632746; 0 0.010466820180029307."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 2749455397,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 2749455397,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 130,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                140,
+                150
+              ],
+              "headroomLowerBound": 30,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010466820180029307,
+            "uniqueTileMasks": 1690,
+            "solverRelevantMoves": 1690,
+            "uniquePlayableWords": 4888,
+            "tileParticipationSpread": 2215,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 1,
+          "candidateSeed": 915355008,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 915355008,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011343012704174229,
+            "uniqueTileMasks": 1691,
+            "solverRelevantMoves": 1691,
+            "uniquePlayableWords": 5163,
+            "tileParticipationSpread": 1497,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "AFFORDABLE",
+      "date": "2027-03-10",
+      "masterSeed": 900009,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 2119878222,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 2278,
+        "tileParticipationSpread": 2316,
+        "hexalinkMoveParticipationPct": 0.009512032721392562
+      },
+      "rankingReasons": [
+        "2 requires 5 turns; 1 requires 4."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 328.470375,
+        "minimumTurnAnalysisMs": 1631.297492,
+        "shortlistAnalysisMs": 2456.872463,
+        "totalSelectionMs": 4416.734171
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 2119878222,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 2119878222,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009512032721392562,
+            "uniqueTileMasks": 2278,
+            "solverRelevantMoves": 2278,
+            "uniquePlayableWords": 5441,
+            "tileParticipationSpread": 2316,
+            "hexalinkRowsTouched": 5,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "2 requires 5 turns; 1 requires 4."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 1,
+          "candidateSeed": 191286573,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 191286573,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 4,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 4
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.01344628210299852,
+            "uniqueTileMasks": 1350,
+            "solverRelevantMoves": 1350,
+            "uniquePlayableWords": 4413,
+            "tileParticipationSpread": 888,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 0,
+          "candidateSeed": 2761608168,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 2761608168,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 4,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010862480990658266,
+            "uniqueTileMasks": 1877,
+            "solverRelevantMoves": 1877,
+            "uniquePlayableWords": 5581,
+            "tileParticipationSpread": 1826,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 100
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ABSTAINING",
+      "date": "2027-03-11",
+      "masterSeed": 900010,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 3860224960,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1732,
+        "tileParticipationSpread": 1620,
+        "hexalinkMoveParticipationPct": 0.010836584308625921
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "2 Hexalink participation 0.010836584308625921; 0 0.008893632159373888."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 334.638878,
+        "minimumTurnAnalysisMs": 1917.584185,
+        "shortlistAnalysisMs": 3253.514706,
+        "totalSelectionMs": 5505.793994
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 3860224960,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 3860224960,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010836584308625921,
+            "uniqueTileMasks": 1732,
+            "solverRelevantMoves": 1732,
+            "uniquePlayableWords": 5881,
+            "tileParticipationSpread": 1620,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "2 Hexalink participation 0.010836584308625921; 0 0.008893632159373888."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 3763850566,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 3763850566,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.008893632159373888,
+            "uniqueTileMasks": 2251,
+            "solverRelevantMoves": 2251,
+            "uniquePlayableWords": 5775,
+            "tileParticipationSpread": 2043,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 1,
+          "candidateSeed": 2632829187,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 2632829187,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.008609556607834697,
+            "uniqueTileMasks": 2392,
+            "solverRelevantMoves": 2392,
+            "uniquePlayableWords": 6672,
+            "tileParticipationSpread": 2528,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 2,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ACCIDENTAL",
+      "date": "2027-03-12",
+      "masterSeed": 900011,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 116867989,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 150,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 50,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1601,
+        "tileParticipationSpread": 1371,
+        "hexalinkMoveParticipationPct": 0.025233409033560434
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "2 Hexalink participation 0.025233409033560434; 0 0.0211999152003392."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 296.526599,
+        "minimumTurnAnalysisMs": 1719.489128,
+        "shortlistAnalysisMs": 2406.861769,
+        "totalSelectionMs": 4422.91755
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 116867989,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 116867989,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.025233409033560434,
+            "uniqueTileMasks": 1601,
+            "solverRelevantMoves": 1601,
+            "uniquePlayableWords": 5354,
+            "tileParticipationSpread": 1371,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "2 Hexalink participation 0.025233409033560434; 0 0.0211999152003392."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 1261393139,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 1261393139,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.0211999152003392,
+            "uniqueTileMasks": 1929,
+            "solverRelevantMoves": 1929,
+            "uniquePlayableWords": 5337,
+            "tileParticipationSpread": 1879,
+            "hexalinkRowsTouched": 5,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 1,
+          "candidateSeed": 3228927222,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 3228927222,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.018862586060548903,
+            "uniqueTileMasks": 2066,
+            "solverRelevantMoves": 2066,
+            "uniquePlayableWords": 5511,
+            "tileParticipationSpread": 2286,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 2,
+            "certificateReplayScore": 130
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ADJECTIVES",
+      "date": "2027-03-13",
+      "masterSeed": 900012,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 412209254,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1710,
+        "tileParticipationSpread": 1430,
+        "hexalinkMoveParticipationPct": 0.011314777098891152
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "2 Hexalink participation 0.011314777098891152; 1 0.011175681716584712."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 273.241002,
+        "minimumTurnAnalysisMs": 1848.860997,
+        "shortlistAnalysisMs": 2924.567984,
+        "totalSelectionMs": 5046.72419
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 412209254,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 412209254,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011314777098891152,
+            "uniqueTileMasks": 1710,
+            "solverRelevantMoves": 1710,
+            "uniquePlayableWords": 5697,
+            "tileParticipationSpread": 1430,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "2 Hexalink participation 0.011314777098891152; 1 0.011175681716584712."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 1,
+          "candidateSeed": 2850995205,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 2850995205,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011175681716584712,
+            "uniqueTileMasks": 1773,
+            "solverRelevantMoves": 1773,
+            "uniquePlayableWords": 5993,
+            "tileParticipationSpread": 1304,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 5,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 0,
+          "candidateSeed": 1417375968,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 1417375968,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.012507817385866166,
+            "uniqueTileMasks": 1466,
+            "solverRelevantMoves": 1466,
+            "uniquePlayableWords": 5015,
+            "tileParticipationSpread": 1232,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "AESTHETICS",
+      "date": "2027-03-14",
+      "masterSeed": 900013,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 3330800763,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 130,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 30,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 2132,
+        "tileParticipationSpread": 2284,
+        "hexalinkMoveParticipationPct": 0.009924573243350535
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "2 headroom lower bound 30; 0 50."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 346.326773,
+        "minimumTurnAnalysisMs": 1939.841594,
+        "shortlistAnalysisMs": 3181.894625,
+        "totalSelectionMs": 5468.107872
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 3330800763,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 3330800763,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 130,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                140,
+                150
+              ],
+              "headroomLowerBound": 30,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009924573243350535,
+            "uniqueTileMasks": 2132,
+            "solverRelevantMoves": 2132,
+            "uniquePlayableWords": 6620,
+            "tileParticipationSpread": 2284,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "2 headroom lower bound 30; 0 50."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 1468007325,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 1468007325,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010775862068965518,
+            "uniqueTileMasks": 1741,
+            "solverRelevantMoves": 1741,
+            "uniquePlayableWords": 6045,
+            "tileParticipationSpread": 1511,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 1,
+          "candidateSeed": 1576744024,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 1576744024,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009968102073365232,
+            "uniqueTileMasks": 1989,
+            "solverRelevantMoves": 1989,
+            "uniquePlayableWords": 5853,
+            "tileParticipationSpread": 2084,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "AIRFREIGHT",
+      "date": "2027-03-15",
+      "masterSeed": 900014,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 1,
+      "selectedCandidateSeed": 3032178007,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 150,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 50,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1719,
+        "tileParticipationSpread": 1500,
+        "hexalinkMoveParticipationPct": 0.011485012059262662
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "1 Hexalink participation 0.011485012059262662; 0 0.010282776349614397."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 291.472863,
+        "minimumTurnAnalysisMs": 1656.585504,
+        "shortlistAnalysisMs": 2507.942877,
+        "totalSelectionMs": 4456.04099
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 1,
+          "candidateSeed": 3032178007,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 3032178007,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011485012059262662,
+            "uniqueTileMasks": 1719,
+            "solverRelevantMoves": 1719,
+            "uniquePlayableWords": 4759,
+            "tileParticipationSpread": 1500,
+            "hexalinkRowsTouched": 6,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 130
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "1 Hexalink participation 0.011485012059262662; 0 0.010282776349614397."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 4282592234,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 4282592234,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.010282776349614397,
+            "uniqueTileMasks": 2020,
+            "solverRelevantMoves": 2020,
+            "uniquePlayableWords": 5425,
+            "tileParticipationSpread": 1420,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 3535369988,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 3535369988,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 3,
+            "minimumTurnExact": true,
+            "minimumTurnStatus": "reachable",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.012072920439454304,
+            "uniqueTileMasks": 1734,
+            "solverRelevantMoves": 1734,
+            "uniquePlayableWords": 4651,
+            "tileParticipationSpread": 1907,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 100
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ALCOHOLISM",
+      "date": "2027-03-16",
+      "masterSeed": 900015,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 0,
+      "selectedCandidateSeed": 3159074183,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1358,
+        "tileParticipationSpread": 1348,
+        "hexalinkMoveParticipationPct": 0.013462574044157244
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "Headroom evidence tied.",
+        "0 Hexalink participation 0.013462574044157244; 1 0.009955201592832254."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 283.642585,
+        "minimumTurnAnalysisMs": 1715.722273,
+        "shortlistAnalysisMs": 2841.849345,
+        "totalSelectionMs": 4841.265291
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 0,
+          "candidateSeed": 3159074183,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 3159074183,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.013462574044157244,
+            "uniqueTileMasks": 1358,
+            "solverRelevantMoves": 1358,
+            "uniquePlayableWords": 5293,
+            "tileParticipationSpread": 1348,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 5,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "Headroom evidence tied.",
+            "0 Hexalink participation 0.013462574044157244; 1 0.009955201592832254."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 1,
+          "candidateSeed": 3812443738,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 3812443738,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.009955201592832254,
+            "uniqueTileMasks": 2091,
+            "solverRelevantMoves": 2091,
+            "uniquePlayableWords": 5801,
+            "tileParticipationSpread": 1725,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 1391403353,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 1391403353,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011092623405435384,
+            "uniqueTileMasks": 1751,
+            "solverRelevantMoves": 1751,
+            "uniquePlayableWords": 4792,
+            "tileParticipationSpread": 1683,
+            "hexalinkRowsTouched": 2,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 2,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "ALLIGATORS",
+      "date": "2027-03-17",
+      "masterSeed": 900016,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 1,
+      "selectedCandidateSeed": 1180074313,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 130,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 30,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1776,
+        "tileParticipationSpread": 1774,
+        "hexalinkMoveParticipationPct": 0.011316057485572028
+      },
+      "rankingReasons": [
+        "Both require 5 canonical Gold turns.",
+        "1 headroom lower bound 30; 0 50."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 303.269213,
+        "minimumTurnAnalysisMs": 1803.350628,
+        "shortlistAnalysisMs": 2993.418725,
+        "totalSelectionMs": 5100.079872
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 1,
+          "candidateSeed": 1180074313,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 1180074313,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 130,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                140,
+                150
+              ],
+              "headroomLowerBound": 30,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.011316057485572028,
+            "uniqueTileMasks": 1776,
+            "solverRelevantMoves": 1776,
+            "uniquePlayableWords": 5606,
+            "tileParticipationSpread": 1774,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 3,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 105
+          },
+          "rankingReasons": [
+            "Both require 5 canonical Gold turns.",
+            "1 headroom lower bound 30; 0 50."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 2882820644,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 2882820644,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.012152144853566653,
+            "uniqueTileMasks": 1525,
+            "solverRelevantMoves": 1525,
+            "uniquePlayableWords": 4996,
+            "tileParticipationSpread": 1234,
+            "hexalinkRowsTouched": 5,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 2,
+            "certificateReplayScore": 105
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 2,
+          "candidateSeed": 4999306,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 4999306,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.008785802143735724,
+            "uniqueTileMasks": 2260,
+            "solverRelevantMoves": 2260,
+            "uniquePlayableWords": 6764,
+            "tileParticipationSpread": 2056,
+            "hexalinkRowsTouched": 3,
+            "hexalinkColumnsTouched": 4,
+            "hexalinkDirectionChanges": 3,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": []
+        }
+      ]
+    },
+    {
+      "answer": "AMBULANCES",
+      "date": "2027-03-18",
+      "masterSeed": 900017,
+      "candidatePoolSize": 3,
+      "selectedCandidateIndex": 2,
+      "selectedCandidateSeed": 2054935951,
+      "selectedMetrics": {
+        "canonicalMinimumGoldTurns": 5,
+        "highestProvenReachableThreshold": 140,
+        "firstProvenUnreachableThreshold": null,
+        "headroomLowerBound": 40,
+        "headroomUpperBound": null,
+        "goldReachableWithoutHexalink": true,
+        "uniqueTileMasks": 1787,
+        "tileParticipationSpread": 1375,
+        "hexalinkMoveParticipationPct": 0.022331397945511387
+      },
+      "rankingReasons": [
+        "2 requires 5 turns; 0 requires 4."
+      ],
+      "resolvedConfiguration": {
+        "candidatePoolSize": 3,
+        "shortlistSize": 3,
+        "headroomThresholds": [
+          110,
+          120,
+          130,
+          140,
+          150
+        ],
+        "analysisTimeoutMs": 500,
+        "candidateGenerator": "M6_BASELINE",
+        "maxAttemptsPerCandidate": 20,
+        "selectorVersion": "m7b.0"
+      },
+      "versions": {
+        "selectorVersion": "m7b.0",
+        "generatorVersion": "m6.0",
+        "rulesVersion": "qjynn-rules-local",
+        "vocabularyVersion": "1.0"
+      },
+      "timings": {
+        "candidateGenerationMs": 320.854776,
+        "minimumTurnAnalysisMs": 1614.701992,
+        "shortlistAnalysisMs": 2720.28825,
+        "totalSelectionMs": 4655.883468
+      },
+      "candidateRanking": [
+        {
+          "rank": 1,
+          "candidateIndex": 2,
+          "candidateSeed": 2054935951,
+          "rankingEvidence": {
+            "candidateIndex": 2,
+            "candidateSeed": 2054935951,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 5,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": false,
+                  "status": "timeout",
+                  "goldReachable": null,
+                  "minimumGoldTurns": null
+                }
+              ],
+              "highestProvenReachableThreshold": 140,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [
+                150
+              ],
+              "headroomLowerBound": 40,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.022331397945511387,
+            "uniqueTileMasks": 1787,
+            "solverRelevantMoves": 1787,
+            "uniquePlayableWords": 5569,
+            "tileParticipationSpread": 1375,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 110
+          },
+          "rankingReasons": [
+            "2 requires 5 turns; 0 requires 4."
+          ]
+        },
+        {
+          "rank": 2,
+          "candidateIndex": 0,
+          "candidateSeed": 965214593,
+          "rankingEvidence": {
+            "candidateIndex": 0,
+            "candidateSeed": 965214593,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 4,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.02121790791427965,
+            "uniqueTileMasks": 1799,
+            "solverRelevantMoves": 1799,
+            "uniquePlayableWords": 5471,
+            "tileParticipationSpread": 1877,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 100
+          },
+          "rankingReasons": []
+        },
+        {
+          "rank": 3,
+          "candidateIndex": 1,
+          "candidateSeed": 1627692444,
+          "rankingEvidence": {
+            "candidateIndex": 1,
+            "candidateSeed": 1627692444,
+            "hardGateStatus": "accepted",
+            "canonicalMinimumGoldTurns": 4,
+            "minimumTurnExact": false,
+            "minimumTurnStatus": "timeout",
+            "headroom": {
+              "probes": [
+                {
+                  "threshold": 100,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true
+                },
+                {
+                  "threshold": 110,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 120,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 5
+                },
+                {
+                  "threshold": 130,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 140,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                },
+                {
+                  "threshold": 150,
+                  "exact": true,
+                  "status": "reachable",
+                  "goldReachable": true,
+                  "minimumGoldTurns": 6
+                }
+              ],
+              "highestProvenReachableThreshold": 150,
+              "firstProvenUnreachableThreshold": null,
+              "unresolvedThresholds": [],
+              "headroomLowerBound": 50,
+              "headroomUpperBound": null
+            },
+            "goldReachableWithoutHexalink": true,
+            "goldWithoutHexalinkStatus": "reachable",
+            "hexalinkMoveParticipationPct": 0.017563888644945992,
+            "uniqueTileMasks": 2353,
+            "solverRelevantMoves": 2353,
+            "uniquePlayableWords": 6022,
+            "tileParticipationSpread": 2781,
+            "hexalinkRowsTouched": 4,
+            "hexalinkColumnsTouched": 2,
+            "hexalinkDirectionChanges": 4,
+            "certificateReplayScore": 100
+          },
+          "rankingReasons": []
+        }
+      ]
+    }
+  ],
+  "poolSensitivity": [
+    {
+      "answer": "WATERMELON",
+      "candidate_pool_size": 3,
+      "selected_candidate_index": 0,
+      "selected_min_gold_turns": 5,
+      "selected_headroom_lower_bound": 40,
+      "runtime_ms": 4977.68
+    },
+    {
+      "answer": "WATERMELON",
+      "candidate_pool_size": 5,
+      "selected_candidate_index": 1,
+      "selected_min_gold_turns": 5,
+      "selected_headroom_lower_bound": 50,
+      "runtime_ms": 5482.653
+    }
+  ]
+}
