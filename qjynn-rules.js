@@ -8,6 +8,29 @@
   const MAX_WORD_LENGTH = 10;
   const MAX_TURNS = 6;
   const MEDAL_THRESHOLDS = { gold: 100, silver: 70, bronze: 40 };
+  const CONSONANT_INVENTORY = Object.freeze({
+    N: 4,
+    R: 4,
+    T: 4,
+    L: 4,
+    S: 4,
+    D: 3,
+    B: 2,
+    C: 2,
+    F: 2,
+    G: 2,
+    H: 2,
+    M: 2,
+    P: 2,
+    V: 2,
+    W: 2,
+    Y: 2,
+    J: 1,
+    K: 1,
+    Q: 1,
+    X: 1,
+    Z: 1
+  });
 
   function areAdjacent(a, b) {
     return Math.abs(a.row - b.row) <= 1 &&
@@ -129,6 +152,7 @@
     MAX_WORD_LENGTH,
     MAX_TURNS,
     MEDAL_THRESHOLDS,
+    CONSONANT_INVENTORY,
     areAdjacent,
     canAppendToChain,
     isValidWordLength,

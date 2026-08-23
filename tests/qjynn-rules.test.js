@@ -2,6 +2,39 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const rules = require('../qjynn-rules.js');
 
+const EXPECTED_CONSONANT_INVENTORY = {
+  N: 4,
+  R: 4,
+  T: 4,
+  L: 4,
+  S: 4,
+  D: 3,
+  B: 2,
+  C: 2,
+  F: 2,
+  G: 2,
+  H: 2,
+  M: 2,
+  P: 2,
+  V: 2,
+  W: 2,
+  Y: 2,
+  J: 1,
+  K: 1,
+  Q: 1,
+  X: 1,
+  Z: 1
+};
+
+test('canonical consonant inventory contains exactly 48 tiles', () => {
+  const total = Object.values(rules.CONSONANT_INVENTORY).reduce((sum, count) => sum + count, 0);
+  assert.equal(total, 48);
+});
+
+test('canonical consonant inventory counts every consonant exactly', () => {
+  assert.deepEqual(rules.CONSONANT_INVENTORY, EXPECTED_CONSONANT_INVENTORY);
+});
+
 test('adjacency and chain limits match gameplay rules', () => {
   assert.equal(rules.areAdjacent({ row: 1, col: 1 }, { row: 2, col: 2 }), true);
   assert.equal(rules.areAdjacent({ row: 1, col: 1 }, { row: 3, col: 1 }), false);
