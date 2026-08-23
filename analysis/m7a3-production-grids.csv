@@ -1,0 +1,11 @@
+answer,seed,strategy,canonicalGoldReachable,canonicalMinTurns,goldWithoutHexalink100,gold120Reachable,goldWithoutHexalink120,gold130Reachable,highestProvenReachableThreshold,firstProvenUnreachableThreshold,goldHeadroom,headroomBand,reducedLinesGold100,reducedLinesGold120,hexalinkRequiredGold100,hexalinkRequiredGold120,canonicalCertificateBasePoints,canonicalCertificateLineBonus,canonicalCertificateHexalinkBonus,uniquePlayableWords,uniqueTileMasks,highValueFirstMoves,shortWordFraction,tileParticipationSpread,nrtlsAdjacencyCount,analysisMs
+WATERMELON,810001,M6_BASELINE,true,5,true,true,true,true,140,,40,40-50,true,true,true,true,100,0,10,5680,1919,1,0.088,1651,25,11402.736
+OSCILLATED,810002,M6_BASELINE,true,5,true,true,true,true,140,,40,40-50,true,true,true,true,95,0,10,4854,1671,1,0.111,1237,27,11238.592
+ABANDONING,810003,M6_BASELINE,true,5,true,true,true,true,150,,50,40-50,true,true,true,true,100,0,10,6296,2187,1,0.086,3095,23,10049.762
+ABSOLUTELY,810004,M6_BASELINE,true,5,true,true,true,true,160,,60,60+,true,true,true,true,95,0,10,4555,1518,1,0.118,1749,23,8816.756
+ACCESSIBLE,810005,M6_BASELINE,true,5,true,true,true,true,140,,40,40-50,true,true,true,true,100,0,10,5124,1563,1,0.108,1516,31,10450.281
+ACCOUNTING,810006,M6_BASELINE,true,5,true,true,true,true,130,,30,20-30,true,true,true,true,95,0,10,4693,1599,1,0.11,1951,31,13132.615
+ADVENTURES,810007,M6_BASELINE,true,5,true,true,true,true,140,,40,40-50,true,true,true,true,100,0,10,5901,1866,1,0.092,1952,25,10882.524
+AGGRAVATED,810008,M6_BASELINE,true,5,true,true,true,true,140,,40,40-50,true,true,true,true,100,0,10,6275,2210,1,0.084,2362,30,11799.559
+AFTERTASTE,810009,M6_BASELINE,true,5,true,true,true,true,140,,40,40-50,true,true,true,true,100,0,10,5150,1513,1,0.103,1342,26,11588.828
+AFFORDABLE,810010,M6_BASELINE,true,5,true,true,true,true,160,,60,60+,true,true,true,true,100,0,10,6686,2423,1,0.077,2668,26,8589.874

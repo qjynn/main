@@ -1,0 +1,16 @@
+{
+  "lowHeadroomAtMost10": null,
+  "highHeadroomAtLeast50": "ABANDONING",
+  "gold100WithoutHexButNot120WithoutHex": null,
+  "gold100RequiresHexalink": null,
+  "reducedLinesMakeCanonicalGoldImpossible": null,
+  "reducedLinesPreserveGoldButIncreaseTurns": null,
+  "similarMaskCountsDifferentHeadroom": [
+    "ABSOLUTELY",
+    "ACCESSIBLE"
+  ],
+  "similarHeadroomDifferentMoveSpaceMetrics": [
+    "OSCILLATED",
+    "ABANDONING"
+  ]
+}

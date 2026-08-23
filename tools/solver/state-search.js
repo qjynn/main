@@ -10,6 +10,36 @@ const HEXALINK_BONUS = qjynnRules.scoreWordByLength(2, true) - qjynnRules.scoreW
 const ROW_COMPLETE_BONUS = qjynnRules.rowColumnBonus(0, 0, 1, 0).points;
 const COLUMN_COMPLETE_BONUS = qjynnRules.rowColumnBonus(0, 0, 0, 1).points;
 
+const CANONICAL_SCORING_POLICY = Object.freeze({
+  score2to3: null,
+  score4to6: null,
+  score7to8: null,
+  score9to10: null,
+  hexalinkBonus: HEXALINK_BONUS,
+  rowBonus: ROW_COMPLETE_BONUS,
+  columnBonus: COLUMN_COMPLETE_BONUS
+});
+
+function scoreWordLengthWithPolicy(length, policy = {}) {
+  if (length >= 2 && length <= 3 && policy.score2to3 !== undefined && policy.score2to3 !== null) return policy.score2to3;
+  if (length >= 4 && length <= 6 && policy.score4to6 !== undefined && policy.score4to6 !== null) return policy.score4to6;
+  if (length >= 7 && length <= 8 && policy.score7to8 !== undefined && policy.score7to8 !== null) return policy.score7to8;
+  if (length >= 9 && length <= 10 && policy.score9to10 !== undefined && policy.score9to10 !== null) return policy.score9to10;
+  return qjynnRules.scoreWordByLength(length, false);
+}
+
+function resolveScoringPolicy(policy = {}) {
+  return {
+    score2to3: policy.score2to3 ?? CANONICAL_SCORING_POLICY.score2to3,
+    score4to6: policy.score4to6 ?? CANONICAL_SCORING_POLICY.score4to6,
+    score7to8: policy.score7to8 ?? CANONICAL_SCORING_POLICY.score7to8,
+    score9to10: policy.score9to10 ?? CANONICAL_SCORING_POLICY.score9to10,
+    hexalinkBonus: policy.hexalinkBonus ?? CANONICAL_SCORING_POLICY.hexalinkBonus,
+    rowBonus: policy.rowBonus ?? CANONICAL_SCORING_POLICY.rowBonus,
+    columnBonus: policy.columnBonus ?? CANONICAL_SCORING_POLICY.columnBonus
+  };
+}
+
 function normalizeGrid(grid) {
   if (!Array.isArray(grid) || grid.length === 0) throw new Error('grid must be a non-empty array');
   return grid.map(row => row.map(cell => String(cell?.letter || cell?.l || cell || '').toUpperCase()));
@@ -72,13 +102,13 @@ function completedMask(usedMask, masks) {
   return result;
 }
 
-function lineSubsetBounds(rowMasks, colMasks) {
+function lineSubsetBounds(rowMasks, colMasks, scoringPolicy = CANONICAL_SCORING_POLICY) {
   const lines = [
-    ...rowMasks.map((mask, index) => ({ bit: 1 << index, mask, bonus: ROW_COMPLETE_BONUS })),
+    ...rowMasks.map((mask, index) => ({ bit: 1 << index, mask, bonus: scoringPolicy.rowBonus })),
     ...colMasks.map((mask, index) => ({
       bit: 1 << (rowMasks.length + index),
       mask,
-      bonus: COLUMN_COMPLETE_BONUS
+      bonus: scoringPolicy.columnBonus
     }))
   ];
   const subsets = [{ bits: 0, mask: 0n, bonus: 0 }];
@@ -154,12 +184,14 @@ function touchedLineBits(path) {
   return { rows, columns };
 }
 
-function moveWithMask(move, colCount, tileCount) {
+function moveWithMask(move, colCount, tileCount, scoringPolicy = CANONICAL_SCORING_POLICY) {
   const mask = pathMask(move.path, colCount);
   const touched = touchedLineBits(move.path);
-  const hexalinkBonus = move.isHexalink ? HEXALINK_BONUS : 0;
+  const baseScore = scoreWordLengthWithPolicy(move.word.length, scoringPolicy);
+  const hexalinkBonus = move.isHexalink ? scoringPolicy.hexalinkBonus : 0;
   return {
     ...move,
+    baseScore,
     mask,
     tileIndexes: maskToIndexes(mask, tileCount),
     touchedRows: touched.rows,
@@ -178,13 +210,13 @@ function chooseCertificateMove(existing, candidate) {
   return JSON.stringify(candidate.path) < JSON.stringify(existing.path) ? candidate : existing;
 }
 
-function prepareSolverMoves(rawMoves, colCount, tileCount) {
+function prepareSolverMoves(rawMoves, colCount, tileCount, scoringPolicy = CANONICAL_SCORING_POLICY) {
   const byMask = new Map();
   const uniqueMaskScore = new Set();
   const uniquePaths = new Set();
 
   for (const rawMove of rawMoves) {
-    const move = moveWithMask(rawMove, colCount, tileCount);
+    const move = moveWithMask(rawMove, colCount, tileCount, scoringPolicy);
     const maskKey = move.mask.toString();
     uniqueMaskScore.add(`${maskKey}|${move.staticScore}`);
     uniquePaths.add(JSON.stringify(move.path));
@@ -231,8 +263,9 @@ function applyMove(state, move, context) {
 
   const newlyCompletedRows = nextRowMask & ~state.completedRows;
   const newlyCompletedCols = nextColMask & ~state.completedCols;
-  const rowBonus = popcountBits(newlyCompletedRows) * ROW_COMPLETE_BONUS;
-  const columnBonus = popcountBits(newlyCompletedCols) * COLUMN_COMPLETE_BONUS;
+  const scoringPolicy = context.scoringPolicy || CANONICAL_SCORING_POLICY;
+  const rowBonus = popcountBits(newlyCompletedRows) * scoringPolicy.rowBonus;
+  const columnBonus = popcountBits(newlyCompletedCols) * scoringPolicy.columnBonus;
   const scoreDelta = move.baseScore + move.hexalinkBonus + rowBonus + columnBonus;
 
   return {
@@ -267,7 +300,7 @@ function remainingLineBonusBound(state, context) {
 }
 
 function maxFutureLineBonusBound(state, context, availableTileMask, remainingTurns) {
-  const lineSubsets = context.lineSubsets || lineSubsetBounds(context.rowMasks, context.colMasks);
+  const lineSubsets = context.lineSubsets || lineSubsetBounds(context.rowMasks, context.colMasks, context.scoringPolicy);
   const completedLineBits = state.completedRows | (state.completedCols << context.rowMasks.length);
   const maxNewTiles = remainingTurns * qjynnRules.MAX_CHAIN_LENGTH;
 
@@ -306,7 +339,8 @@ function replaySequence(boardState, sequence) {
     turnsUsed: 0,
     score: 0
   };
-  const context = { rowMasks, colMasks };
+  const scoringPolicy = resolveScoringPolicy(boardState.scoringPolicy);
+  const context = { rowMasks, colMasks, scoringPolicy };
   let state = initial;
   const replayed = [];
 
@@ -314,7 +348,7 @@ function replaySequence(boardState, sequence) {
     const move = {
       ...rawMove,
       mask: pathMask(rawMove.path, colCount),
-      hexalinkBonus: rawMove.isHexalink ? HEXALINK_BONUS : rawMove.hexalinkBonus || 0
+      hexalinkBonus: rawMove.isHexalink ? scoringPolicy.hexalinkBonus : rawMove.hexalinkBonus || 0
     };
     if ((move.mask & state.usedMask) !== 0n) throw new Error(`Move reuses unavailable tile: ${rawMove.word}`);
     const applied = applyMove(state, move, context);
@@ -353,12 +387,17 @@ function solveBoard(boardState, wordIndex, options = {}) {
   const tileCount = rowCount * colCount;
   const maxTurns = boardState.maxTurns || options.maxTurns || DEFAULT_MAX_TURNS;
   const goldThreshold = boardState.goldThreshold || options.goldThreshold || DEFAULT_GOLD_THRESHOLD;
+  const scoringPolicy = resolveScoringPolicy(options.scoringPolicy || boardState.scoringPolicy);
+  const moveFilter = options.moveFilter || boardState.moveFilter || null;
+  const certificateConstraint = options.certificateConstraint || boardState.certificateConstraint || null;
   const mode = options.mode || boardState.mode || MODE_MAXIMIZE_SCORE;
+  const timeoutMs = options.timeoutMs || boardState.timeoutMs || null;
+  let timedOut = false;
   if (![MODE_FIND_GOLD, MODE_MAXIMIZE_SCORE].includes(mode)) {
     throw new Error(`Unsupported solver mode: ${mode}`);
   }
-  const rawMoves = enumerateLegalMoves(boardState, wordIndex);
-  const prepared = prepareSolverMoves(rawMoves, colCount, tileCount);
+  const rawMoves = enumerateLegalMoves(boardState, wordIndex).filter(move => !moveFilter || moveFilter(move));
+  const prepared = prepareSolverMoves(rawMoves, colCount, tileCount, scoringPolicy);
   const allMoves = prepared.moves;
 
   const { rows: rowMasks, columns: colMasks } = lineMasks(rowCount, colCount);
@@ -374,8 +413,9 @@ function solveBoard(boardState, wordIndex, options = {}) {
   const context = {
     rowMasks,
     colMasks,
-    lineSubsets: lineSubsetBounds(rowMasks, colMasks),
-    allTilesMask: (1n << BigInt(tileCount)) - 1n
+    lineSubsets: lineSubsetBounds(rowMasks, colMasks, scoringPolicy),
+    allTilesMask: (1n << BigInt(tileCount)) - 1n,
+    scoringPolicy
   };
   const memo = new Map();
   const stats = {
@@ -390,7 +430,8 @@ function solveBoard(boardState, wordIndex, options = {}) {
     uniqueMaskScoreCount: prepared.stats.uniqueMaskScoreCount,
     uniquePaths: prepared.stats.uniquePaths,
     dominatedMoveCount: prepared.stats.dominatedMoveCount,
-    elapsedMs: 0
+    elapsedMs: 0,
+    timedOut: false
   };
   let incumbentScore = 0;
   let incumbentSequence = [];
@@ -419,12 +460,22 @@ function solveBoard(boardState, wordIndex, options = {}) {
       incumbentScore = state.score;
       incumbentSequence = sequence.map(move => ({ ...move, path: move.path.map(pair => pair.slice()) }));
     }
-    if (mode === MODE_FIND_GOLD && state.score >= goldThreshold && !goldSequence) {
+    if (mode === MODE_FIND_GOLD && state.score >= goldThreshold && !goldSequence &&
+      (!certificateConstraint || certificateConstraint(sequence, state))) {
       goldSequence = sequence.map(move => ({ ...move, path: move.path.map(pair => pair.slice()) }));
     }
   }
 
+  function deadlineReached() {
+    if (!timeoutMs) return false;
+    if (Number(process.hrtime.bigint() - started) / 1e6 < timeoutMs) return false;
+    timedOut = true;
+    stats.timedOut = true;
+    return true;
+  }
+
   function search(state, sequence = []) {
+    if (deadlineReached()) return { score: 0, sequence: [] };
     stats.statesExplored++;
     noteIncumbent(state, sequence);
     if (mode === MODE_FIND_GOLD && goldSequence) return { score: 0, sequence: [] };
@@ -461,6 +512,7 @@ function solveBoard(boardState, wordIndex, options = {}) {
 
     let best = { score: 0, sequence: [] };
     for (const move of compatibleMoves) {
+      if (deadlineReached()) break;
       const applied = applyMove(state, move, context);
       const nextState = {
         ...applied.state,
@@ -493,9 +545,10 @@ function solveBoard(boardState, wordIndex, options = {}) {
   const maxScore = mode === MODE_FIND_GOLD && goldSequence
     ? goldSequence.at(-1).cumulativeScore
     : Math.max(result.score, incumbentScore);
-  const goldReachable = maxScore >= goldThreshold;
+  const goldReachable = mode === MODE_FIND_GOLD ? Boolean(goldSequence) : maxScore >= goldThreshold;
   const goldCertificate = goldReachable ? (goldSequence || bestSequence) : null;
   stats.elapsedMs = Number(process.hrtime.bigint() - started) / 1e6;
+  stats.timedOut = timedOut;
 
   return {
     maxScore,
@@ -522,5 +575,8 @@ module.exports = {
   lineMasks,
   completedMask,
   MODE_FIND_GOLD,
-  MODE_MAXIMIZE_SCORE
+  MODE_MAXIMIZE_SCORE,
+  CANONICAL_SCORING_POLICY,
+  resolveScoringPolicy,
+  scoreWordLengthWithPolicy
 };

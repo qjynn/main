@@ -1,0 +1,150 @@
+{
+  "datasetSize": 10,
+  "headroomDistribution": {
+    "highestProvenReachableThreshold": {
+      "min": 130,
+      "max": 160,
+      "mean": 144,
+      "median": 140,
+      "p25": 140,
+      "p75": 150,
+      "p90": 160
+    },
+    "goldHeadroom": {
+      "min": 30,
+      "max": 60,
+      "mean": 44,
+      "median": 40,
+      "p25": 40,
+      "p75": 50,
+      "p90": 60,
+      "standardDeviation": 9.16515138991168
+    },
+    "canonicalMinimumGoldTurns": {
+      "min": 5,
+      "max": 5,
+      "mean": 5,
+      "median": 5,
+      "p25": 5,
+      "p75": 5,
+      "p90": 5
+    }
+  },
+  "scenarioSummary": [
+    {
+      "scenario": "CANONICAL",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 5,
+      "medianSolverTime": 100.26435000000001
+    },
+    {
+      "scenario": "GOLD_110",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 5,
+      "medianSolverTime": 109.3095005
+    },
+    {
+      "scenario": "GOLD_120",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 6,
+      "medianSolverTime": 105.884
+    },
+    {
+      "scenario": "GOLD_130",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 6,
+      "medianSolverTime": 107.49110350000001
+    },
+    {
+      "scenario": "REDUCED_LINES",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 5,
+      "medianSolverTime": 97.2486095
+    },
+    {
+      "scenario": "REDUCED_LINES_GOLD_120",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 6,
+      "medianSolverTime": 102.79668649999999
+    },
+    {
+      "scenario": "HEXALINK_REQUIRED",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 5,
+      "medianSolverTime": 99.733811
+    },
+    {
+      "scenario": "HEXALINK_REQUIRED_GOLD_120",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 6,
+      "medianSolverTime": 102.44302250000001
+    }
+  ],
+  "hexalinkImportance": {
+    "gold100WithoutHexalinkPct": 100,
+    "gold120WithoutHexalinkPct": 100,
+    "gold100WithHexalinkRequiredPct": 100,
+    "gold120WithHexalinkRequiredPct": 100,
+    "medianHexalinkTurnDeltaAt100": 0,
+    "medianHexalinkTurnDeltaAt120": 0
+  },
+  "lineBonus": {
+    "canonical100": {
+      "scenario": "CANONICAL",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 5,
+      "medianSolverTime": 100.26435000000001
+    },
+    "reduced100": {
+      "scenario": "REDUCED_LINES",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 5,
+      "medianSolverTime": 97.2486095
+    },
+    "canonical120": {
+      "scenario": "GOLD_120",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 6,
+      "medianSolverTime": 105.884
+    },
+    "reduced120": {
+      "scenario": "REDUCED_LINES_GOLD_120",
+      "exactPuzzles": 10,
+      "goldCapablePct": 100,
+      "medianMinTurns": 6,
+      "medianSolverTime": 102.79668649999999
+    }
+  },
+  "correlations": {
+    "uniqueTileMasksVsGoldHeadroom": 0.37771345666197725,
+    "highValueFirstMovesVsGoldHeadroom": null,
+    "tileParticipationSpreadVsGoldHeadroom": 0.41881165106589807
+  },
+  "counterexamples": {
+    "lowHeadroomAtMost10": null,
+    "highHeadroomAtLeast50": "ABANDONING",
+    "gold100WithoutHexButNot120WithoutHex": null,
+    "gold100RequiresHexalink": null,
+    "reducedLinesMakeCanonicalGoldImpossible": null,
+    "reducedLinesPreserveGoldButIncreaseTurns": null,
+    "similarMaskCountsDifferentHeadroom": [
+      "ABSOLUTELY",
+      "ACCESSIBLE"
+    ],
+    "similarHeadroomDifferentMoveSpaceMetrics": [
+      "OSCILLATED",
+      "ABANDONING"
+    ]
+  }
+}

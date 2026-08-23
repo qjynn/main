@@ -1,0 +1,9 @@
+{
+  "canonicalGoldButTop10000Impossible": null,
+  "goldEasyWithTop5000": "WATERMELON|710001|PREBUILT_COMPACT",
+  "gold130WithoutHexalink": "WATERMELON|710001|PREBUILT_COMPACT",
+  "gold110NeedsHexalink": null,
+  "longWordReductionChangesGold": null,
+  "lineBonusesDecisive": "WATERMELON|710001|PREBUILT_COMPACT",
+  "ruleChangesIrrelevant": null
+}

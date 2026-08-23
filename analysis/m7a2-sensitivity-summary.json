@@ -1,0 +1,1123 @@
+{
+  "summaryByScenario": {
+    "CANONICAL_BASELINE": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "GOLD_100": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "GOLD_110": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "GOLD_120": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "GOLD_130": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "GOLD_140": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.6666666666666665,
+        "median": 3,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "GOLD_150": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 3,
+        "max": 3,
+        "mean": 3,
+        "median": 3,
+        "p25": 3,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LONG_A_CANONICAL": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LONG_B_12_15": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LONG_C_15_ALL_LONG": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LONG_D_12_ALL_LONG": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "HEX_BONUS_0": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "HEX_BONUS_10": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "HEX_BONUS_15": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "HEX_BONUS_20": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "HEX_BONUS_25": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "HEX_BONUS_30": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "REQUIRE_HEX_100": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 0,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "REQUIRE_HEX_110": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 0,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "REQUIRE_HEX_120": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 0,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "REQUIRE_HEX_130": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 0,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "EXACTLY_SIX_100": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 6,
+        "max": 6,
+        "mean": 6,
+        "median": 6,
+        "p25": 6,
+        "p75": 6,
+        "p90": 6
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "EXACTLY_SIX_110": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 6,
+        "max": 6,
+        "mean": 6,
+        "median": 6,
+        "p25": 6,
+        "p75": 6,
+        "p90": 6
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "EXACTLY_SIX_120": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 6,
+        "max": 6,
+        "mean": 6,
+        "median": 6,
+        "p25": 6,
+        "p75": 6,
+        "p90": 6
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "EXACTLY_SIX_130": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 6,
+        "max": 6,
+        "mean": 6,
+        "median": 6,
+        "p25": 6,
+        "p75": 6,
+        "p90": 6
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LINE_CANONICAL": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LINE_NONE": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 0,
+      "goldCapablePct": 0,
+      "goldWithoutHexalinkPct": 0,
+      "goldWithHexalinkRequiredPct": 0,
+      "minGoldTurns": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "median": 0,
+        "p25": 0,
+        "p75": 0,
+        "p90": 0
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LINE_REDUCED": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 3,
+        "max": 3,
+        "mean": 3,
+        "median": 3,
+        "p25": 3,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "LINE_INCREASED": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "COMBO_1_T120_HEX20": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "COMBO_2_T120_LONG15_HEX20": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "COMBO_3_T120_REQUIRE_HEX": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 0,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "COMBO_4_T130_REQUIRE_HEX_HEX20": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 0,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "COMBO_5_T120_LINE_REDUCED": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 3,
+        "max": 4,
+        "mean": 3.3333333333333335,
+        "median": 3,
+        "p25": 3,
+        "p75": 4,
+        "p90": 4
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "VOCAB_ALL": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 100,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 184,
+      "medianLegalWords": 1409
+    },
+    "VOCAB_TOP_30000": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 66.66666666666666,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 171,
+      "medianLegalWords": 1142
+    },
+    "VOCAB_TOP_20000": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 33.33333333333333,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 120,
+      "medianLegalWords": 722
+    },
+    "VOCAB_TOP_15000": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 33.33333333333333,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2,
+        "p25": 2,
+        "p75": 2,
+        "p90": 2
+      },
+      "medianSolverRelevantMoves": 117,
+      "medianLegalWords": 612
+    },
+    "VOCAB_TOP_10000": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 33.33333333333333,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 100,
+      "medianLegalWords": 419
+    },
+    "VOCAB_TOP_5000": {
+      "puzzlesAnalyzed": 3,
+      "goldCapableCount": 3,
+      "goldCapablePct": 100,
+      "goldWithoutHexalinkPct": 100,
+      "goldWithHexalinkRequiredPct": 33.33333333333333,
+      "minGoldTurns": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "median": 2,
+        "p25": 2,
+        "p75": 3,
+        "p90": 3
+      },
+      "medianSolverRelevantMoves": 79,
+      "medianLegalWords": 290
+    }
+  },
+  "curves": {
+    "threshold": [
+      {
+        "threshold": 100,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "threshold": 110,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "threshold": 120,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "threshold": 130,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "threshold": 140,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 3
+      },
+      {
+        "threshold": 150,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 3
+      }
+    ],
+    "hexalinkBonus": [
+      {
+        "bonus": 0,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "bonus": 10,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "bonus": 15,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "bonus": 20,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "bonus": 25,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "bonus": 30,
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      }
+    ],
+    "vocabulary": [
+      {
+        "tier": "ALL",
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "tier": "TOP_30000",
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "tier": "TOP_20000",
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "tier": "TOP_15000",
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "tier": "TOP_10000",
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      },
+      {
+        "tier": "TOP_5000",
+        "goldCapablePct": 100,
+        "goldWithoutHexalinkPct": 100,
+        "medianMinimumGoldTurns": 2
+      }
+    ]
+  },
+  "highestTestedThresholds": {
+    "WATERMELON|710001|PREBUILT_COMPACT": 150,
+    "OSCILLATED|710002|PREBUILT_COMPACT": 150,
+    "ABANDONING|710003|PREBUILT_COMPACT": 150
+  },
+  "leverage": {
+    "CANONICAL_BASELINE": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "GOLD_100": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "GOLD_110": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "GOLD_120": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "GOLD_130": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "GOLD_140": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 1
+    },
+    "GOLD_150": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 1
+    },
+    "LONG_A_CANONICAL": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "LONG_B_12_15": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "LONG_C_15_ALL_LONG": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "LONG_D_12_ALL_LONG": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "HEX_BONUS_0": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "HEX_BONUS_10": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "HEX_BONUS_15": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "HEX_BONUS_20": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "HEX_BONUS_25": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "HEX_BONUS_30": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "REQUIRE_HEX_100": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": -100,
+      "deltaMedianMinTurns": 0
+    },
+    "REQUIRE_HEX_110": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": -100,
+      "deltaMedianMinTurns": 0
+    },
+    "REQUIRE_HEX_120": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": -100,
+      "deltaMedianMinTurns": 0
+    },
+    "REQUIRE_HEX_130": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": -100,
+      "deltaMedianMinTurns": 0
+    },
+    "EXACTLY_SIX_100": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 4
+    },
+    "EXACTLY_SIX_110": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 4
+    },
+    "EXACTLY_SIX_120": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 4
+    },
+    "EXACTLY_SIX_130": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 4
+    },
+    "LINE_CANONICAL": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "LINE_NONE": {
+      "deltaGoldCapablePct": -100,
+      "deltaGoldWithoutHexalinkPct": -100,
+      "deltaMedianMinTurns": -2
+    },
+    "LINE_REDUCED": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 1
+    },
+    "LINE_INCREASED": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "COMBO_1_T120_HEX20": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "COMBO_2_T120_LONG15_HEX20": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "COMBO_3_T120_REQUIRE_HEX": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": -100,
+      "deltaMedianMinTurns": 0
+    },
+    "COMBO_4_T130_REQUIRE_HEX_HEX20": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": -100,
+      "deltaMedianMinTurns": 0
+    },
+    "COMBO_5_T120_LINE_REDUCED": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 1
+    },
+    "VOCAB_ALL": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "VOCAB_TOP_30000": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "VOCAB_TOP_20000": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "VOCAB_TOP_15000": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "VOCAB_TOP_10000": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    },
+    "VOCAB_TOP_5000": {
+      "deltaGoldCapablePct": 0,
+      "deltaGoldWithoutHexalinkPct": 0,
+      "deltaMedianMinTurns": 0
+    }
+  },
+  "vocabulary": {
+    "provenance": "Deterministic Qjynn Vocabulary 1.0 order rank provider for analysis only; not a production familiarity dataset.",
+    "tiers": [
+      {
+        "tier": "ALL_QJYNN",
+        "availableIndexedWords": 41814,
+        "pctOfFullVocabulary": 100
+      },
+      {
+        "tier": "TOP_30000",
+        "availableIndexedWords": 28477,
+        "pctOfFullVocabulary": 68.10398431147463
+      },
+      {
+        "tier": "TOP_20000",
+        "availableIndexedWords": 18944,
+        "pctOfFullVocabulary": 45.30540010522792
+      },
+      {
+        "tier": "TOP_15000",
+        "availableIndexedWords": 14251,
+        "pctOfFullVocabulary": 34.08188644951451
+      },
+      {
+        "tier": "TOP_10000",
+        "availableIndexedWords": 9487,
+        "pctOfFullVocabulary": 22.6885732051466
+      },
+      {
+        "tier": "TOP_5000",
+        "availableIndexedWords": 4862,
+        "pctOfFullVocabulary": 11.627684507581193
+      }
+    ],
+    "certificateFamiliarity": {
+      "wordRanks": [
+        {
+          "word": "watermelon",
+          "rank": 43083
+        },
+        {
+          "word": "goofed",
+          "rank": 17225
+        }
+      ],
+      "meanRank": 30154,
+      "medianRank": 30154,
+      "worstRankedWord": {
+        "word": "watermelon",
+        "rank": 43083
+      },
+      "unrankedWords": 0
+    },
+    "certificateTierCoverage": {
+      "TOP_30000": {
+        "retained": 1,
+        "total": 2
+      },
+      "TOP_20000": {
+        "retained": 1,
+        "total": 2
+      },
+      "TOP_15000": {
+        "retained": 0,
+        "total": 2
+      },
+      "TOP_10000": {
+        "retained": 0,
+        "total": 2
+      },
+      "TOP_5000": {
+        "retained": 0,
+        "total": 2
+      }
+    }
+  }
+}
