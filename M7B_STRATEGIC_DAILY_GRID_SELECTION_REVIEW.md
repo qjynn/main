@@ -236,3 +236,43 @@ Untracked M7B files are listed in status and are not included by `git diff --sta
 ## Stop
 
 M7B implementation and bounded validation artifacts are complete. No subsequent milestone was started.
+
+## M7B.1 Exact Minimum-Gold-Turn Optimization
+
+M7B.1 adds exact threshold reachability without changing gameplay rules, scoring, Vocabulary 1.0, M6 gates, or `game.js`.
+
+### Implementation
+
+Modified:
+- `tools/solver/state-search.js`
+- `tools/generator/strategic-selector.js`
+- `tools/generator/candidate-ranker.js`
+
+Created:
+- `tests/solver-minimum-gold-turns.test.js`
+
+`createSolverContext()` prepares the vocabulary moves, same-mask-dominated representatives, BigInt masks, line metadata, and a per-board compatibility cache once. `findMinimumGoldTurns(boardState, wordIndex, options)` searches exact threshold reachability by increasing turn budget and returns `{ reachable, exact, minimumTurns, certificate, stats }`. A caller may provide a validated M6 `knownUpperTurns` and `knownCertificate`; after all lower budgets are disproven, that certificate is reused instead of repeating the already-proven upper-budget search.
+
+Threshold search uses a safe optimistic bound consisting of the highest compatible static move scores plus only row/column bonuses whose missing tiles are present in compatible moves and fit within the remaining six-tile chain capacity. It also uses structural-state score dominance: for identical `(turnsUsed, usedMask, completedRows, completedCols)`, a lower score cannot reach a threshold that the higher score cannot reach. Move ordering favors immediate score and unfinished-line coverage; ordering does not prune.
+
+Timeouts return `reachable: null`, `exact: false`, `minimumTurns: null`, and `status: "timeout"`. M7B ranking now compares exactness before turn value, so an exact five-turn result outranks an unresolved five-turn upper bound. Unresolved values retain `minimumGoldTurnsUpperBound` and are never labeled exact.
+
+### Tests
+
+Command:
+
+```sh
+node --test tests/*.test.js
+```
+
+Result: **174 passed, 0 failed, 0 skipped**, duration 7335.922070 ms.
+
+The new tests cover exact minimums from 1 through 6 turns, impossible Gold, timeout semantics, certificate replay, deterministic small-board comparisons, and exact-versus-unresolved ranking. Existing M1-M7B coverage remains green.
+
+### Performance Evidence
+
+The representative full Vocabulary 1.0 WATERMELON 8x6 exact query was run without an artificial timeout. It did not complete after more than two minutes during the lower-budget proof and was stopped for review. Therefore M7B.1 improves preparation reuse, compatibility lookup, bound calculation, move ordering, and redundant upper-search avoidance, but production-scale exact minimum-turn certification remains unresolved. No approximate pruning was added and no timeout was converted into a result.
+
+### M7B.1 Limitations
+
+The current exact lower-budget search still explores a large state space for real 8x6 boards. The next performance work should be separately reviewed; this milestone does not loosen correctness and does not start M7C or any later milestone.

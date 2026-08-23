@@ -14,6 +14,16 @@ function timeoutCount(candidate) {
   return candidate.rankingEvidence?.headroom?.unresolvedThresholds?.length || 0;
 }
 
+function minimumTurnExact(candidate) {
+  const evidence = candidate.rankingEvidence || {};
+  return evidence.minimumTurnExact !== false;
+}
+
+function minimumTurnValue(candidate) {
+  const evidence = candidate.rankingEvidence || {};
+  return evidence.canonicalMinimumGoldTurns ?? evidence.minimumGoldTurnsUpperBound ?? -Infinity;
+}
+
 function participationPct(candidate) {
   return candidate.rankingEvidence?.hexalinkMoveParticipationPct ?? 0;
 }
@@ -28,11 +38,15 @@ function comparisonReasons(a, b) {
   const av = a.rankingEvidence || {};
   const bv = b.rankingEvidence || {};
 
-  if (av.canonicalMinimumGoldTurns !== bv.canonicalMinimumGoldTurns) {
-    reasons.push(`${a.candidateIndex} requires ${av.canonicalMinimumGoldTurns} turns; ${b.candidateIndex} requires ${bv.canonicalMinimumGoldTurns}.`);
+  if (minimumTurnExact(a) !== minimumTurnExact(b)) {
+    reasons.push(`${a.candidateIndex} has ${minimumTurnExact(a) ? 'exact' : 'unresolved'} minimum-turn evidence; ${b.candidateIndex} has ${minimumTurnExact(b) ? 'exact' : 'unresolved'} evidence.`);
     return reasons;
   }
-  reasons.push(`Both require ${av.canonicalMinimumGoldTurns} canonical Gold turns.`);
+  if (minimumTurnValue(a) !== minimumTurnValue(b)) {
+    reasons.push(`${a.candidateIndex} requires ${minimumTurnValue(a)} turns; ${b.candidateIndex} requires ${minimumTurnValue(b)}.`);
+    return reasons;
+  }
+  reasons.push(`Both have ${minimumTurnExact(a) ? 'exact' : 'unresolved'} evidence at ${minimumTurnValue(a)} canonical Gold turns.`);
 
   if (firstUnreachable(a) !== firstUnreachable(b)) {
     reasons.push(`${a.candidateIndex} first proven unreachable threshold ${firstUnreachable(a)}; ${b.candidateIndex} ${firstUnreachable(b)}.`);
@@ -86,7 +100,8 @@ function compareCandidates(a, b) {
   const av = a.rankingEvidence || {};
   const bv = b.rankingEvidence || {};
   const checks = [
-    [bv.canonicalMinimumGoldTurns ?? -Infinity, av.canonicalMinimumGoldTurns ?? -Infinity],
+    [minimumTurnExact(b) ? 1 : 0, minimumTurnExact(a) ? 1 : 0],
+    [minimumTurnValue(b), minimumTurnValue(a)],
     [firstUnreachable(a), firstUnreachable(b)],
     [headroomLower(a), headroomLower(b)],
     [timeoutCount(a), timeoutCount(b)],
@@ -117,5 +132,7 @@ function rankCandidates(candidates) {
 module.exports = {
   compareCandidates,
   comparisonReasons,
-  rankCandidates
+  rankCandidates,
+  minimumTurnExact,
+  minimumTurnValue
 };

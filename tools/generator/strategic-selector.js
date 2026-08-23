@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const qjynnRules = require('../../qjynn-rules.js');
 const { buildVocabularyIndex, parseWordList } = require('../solver/word-index.js');
-const { solveBoard, replaySequence, MODE_FIND_GOLD } = require('../solver/state-search.js');
+const { findMinimumGoldTurns, replaySequence } = require('../solver/state-search.js');
 const { hexalinkMetrics } = require('../analyzer/puzzle-analyzer.js');
 const { toCsv } = require('../analyzer/batch-analyzer.js');
 const { summary, mean, median, round } = require('../analyzer/metrics-utils.js');
@@ -58,39 +58,46 @@ function minimumGoldTurns(puzzle, wordIndex, options = {}) {
   const knownUpperTurns = Number.isInteger(options.knownUpperTurns)
     ? Math.max(1, Math.min(qjynnRules.MAX_TURNS, options.knownUpperTurns))
     : qjynnRules.MAX_TURNS;
-  let best = knownUpperTurns;
-  let bestResult = null;
-  for (let turns = knownUpperTurns - 1; turns >= 1; turns--) {
-    const result = solveBoard({
-      ...puzzle,
-      maxTurns: turns,
-      goldThreshold: 100,
-      timeoutMs: options.timeoutMs
-    }, wordIndex, {
-      mode: MODE_FIND_GOLD,
-      timeoutMs: options.timeoutMs
-    });
-    if (result.stats?.timedOut) {
-      return {
-        exact: false,
-        status: 'timeout',
-        minimumGoldTurns: null,
-        elapsedMs: Number(process.hrtime.bigint() - started) / 1e6,
-        result
-      };
-    }
-    if (result.goldReachable) {
-      best = turns;
-      bestResult = result;
-    }
-    else break;
+  const result = findMinimumGoldTurns({
+    ...puzzle,
+    maxTurns: qjynnRules.MAX_TURNS,
+    goldThreshold: 100,
+    timeoutMs: options.timeoutMs
+  }, wordIndex, {
+    timeoutMs: options.timeoutMs,
+    knownUpperTurns,
+    knownCertificate: options.knownCertificate || null
+  });
+  if (!result.exact) {
+    return {
+      exact: false,
+      status: result.status,
+      minimumGoldTurns: null,
+      elapsedMs: Number(process.hrtime.bigint() - started) / 1e6,
+      result
+    };
+  }
+  if (!result.reachable) {
+    return {
+      exact: true,
+      status: 'unreachable',
+      minimumGoldTurns: null,
+      elapsedMs: Number(process.hrtime.bigint() - started) / 1e6,
+      result
+    };
   }
   return {
     exact: true,
     status: 'reachable',
-    minimumGoldTurns: best,
+    minimumGoldTurns: result.minimumTurns,
     elapsedMs: Number(process.hrtime.bigint() - started) / 1e6,
-    result: bestResult
+    result: {
+      ...result,
+      goldReachable: true,
+      goldCertificate: result.certificate,
+      turnsUsed: result.minimumTurns,
+      stats: { ...result.stats, timedOut: false }
+    }
   };
 }
 
@@ -132,7 +139,8 @@ function evaluateMinimumTurns(candidates, wordIndex, config) {
   for (const candidate of candidates) {
     const minTurns = minimumGoldTurns(candidate.puzzle, wordIndex, {
       timeoutMs: config.analysisTimeoutMs,
-      knownUpperTurns: candidate.privateCertification?.goldTurns
+      knownUpperTurns: candidate.privateCertification?.goldTurns,
+      knownCertificate: candidate.privateCertification?.goldCertificate
     });
     if (!minTurns.exact || minTurns.minimumGoldTurns === null) {
       if (candidate.privateCertification?.goldTurns) {
@@ -146,7 +154,8 @@ function evaluateMinimumTurns(candidates, wordIndex, config) {
             hardGateStatus: candidate.hardGateStatus,
             canonicalMinimumGoldTurns: candidate.privateCertification.goldTurns,
             minimumTurnExact: false,
-            minimumTurnStatus: minTurns.status
+            minimumTurnStatus: minTurns.status,
+            minimumGoldTurnsUpperBound: candidate.privateCertification.goldTurns
           }
         });
         continue;
@@ -173,7 +182,8 @@ function evaluateMinimumTurns(candidates, wordIndex, config) {
         hardGateStatus: candidate.hardGateStatus,
         canonicalMinimumGoldTurns: minTurns.minimumGoldTurns,
         minimumTurnExact: true,
-        minimumTurnStatus: minTurns.status
+        minimumTurnStatus: minTurns.status,
+        minimumGoldTurnsUpperBound: null
       }
     });
   }
@@ -338,6 +348,8 @@ function candidateRow(answer, selection, candidate) {
     candidate_seed: candidate.candidateSeed,
     hard_gate_status: candidate.hardGateStatus,
     canonical_min_gold_turns: evidence.canonicalMinimumGoldTurns ?? '',
+    minimum_gold_turns_exact: evidence.minimumTurnExact ?? '',
+    minimum_gold_turns_upper_bound: evidence.minimumGoldTurnsUpperBound ?? '',
     shortlisted: selection.rankedCandidates.some(item => item.candidateIndex === candidate.candidateIndex),
     selected: selection.selectedCandidate.candidateIndex === candidate.candidateIndex,
     highest_proven_reachable_threshold: evidence.headroom?.highestProvenReachableThreshold ?? '',
@@ -361,6 +373,8 @@ function selectedPuzzleRow(answer, selection) {
     selected_candidate_index: manifest.selectedCandidateIndex,
     selected_candidate_seed: manifest.selectedCandidateSeed,
     canonical_min_gold_turns: metrics.canonicalMinimumGoldTurns,
+    minimum_gold_turns_exact: selection.selectedCandidate.rankingEvidence.minimumTurnExact,
+    minimum_gold_turns_upper_bound: selection.selectedCandidate.rankingEvidence.minimumGoldTurnsUpperBound ?? '',
     highest_proven_reachable_threshold: metrics.highestProvenReachableThreshold ?? '',
     first_proven_unreachable_threshold: metrics.firstProvenUnreachableThreshold ?? '',
     headroom_lower_bound: metrics.headroomLowerBound ?? '',

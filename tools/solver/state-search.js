@@ -326,6 +326,34 @@ function optimisticUpperBound(state, availableMoves, context, remainingTurns) {
     maxFutureLineBonusBound(state, context, availableTileMask, remainingTurns);
 }
 
+function thresholdOptimisticUpperBound(state, availableMoves, context, remainingTurns) {
+  // For threshold reachability, the full line-subset bound is unnecessarily
+  // expensive. This bound remains optimistic: it permits every compatible
+  // move's static score and every not-yet-completed row/column bonus, even
+  // when those rewards cannot coexist in a legal sequence.
+  let score = 0;
+  let availableTileMask = 0n;
+  score = topNSum(availableMoves.map(move => move.staticScore), remainingTurns);
+  for (const move of availableMoves) availableTileMask |= move.mask;
+  const maxNewTiles = remainingTurns * qjynnRules.MAX_CHAIN_LENGTH;
+  let lineBonus = 0;
+  for (let row = 0; row < context.rowMasks.length; row++) {
+    if ((state.completedRows & (1 << row)) !== 0) continue;
+    const missing = context.rowMasks[row] & ~state.usedMask;
+    if ((missing & ~availableTileMask) === 0n && popcountBigInt(missing) <= maxNewTiles) {
+      lineBonus += context.scoringPolicy.rowBonus;
+    }
+  }
+  for (let col = 0; col < context.colMasks.length; col++) {
+    if ((state.completedCols & (1 << col)) !== 0) continue;
+    const missing = context.colMasks[col] & ~state.usedMask;
+    if ((missing & ~availableTileMask) === 0n && popcountBigInt(missing) <= maxNewTiles) {
+      lineBonus += context.scoringPolicy.columnBonus;
+    }
+  }
+  return score + lineBonus;
+}
+
 function replaySequence(boardState, sequence) {
   const grid = normalizeGrid(boardState.grid);
   const rowCount = grid.length;
@@ -361,6 +389,245 @@ function replaySequence(boardState, sequence) {
     turnsUsed: state.turnsUsed,
     sequence: replayed,
     finalUsedMask: state.usedMask.toString()
+  };
+}
+
+function createSolverContext(boardState, wordIndex, options = {}) {
+  const grid = normalizeGrid(boardState.grid);
+  const rowCount = grid.length;
+  const colCount = grid[0].length;
+  const tileCount = rowCount * colCount;
+  const scoringPolicy = resolveScoringPolicy(options.scoringPolicy || boardState.scoringPolicy);
+  const moveFilter = options.moveFilter || boardState.moveFilter || null;
+  const rawMoves = enumerateLegalMoves(boardState, wordIndex)
+    .filter(move => !moveFilter || moveFilter(move));
+  const prepared = prepareSolverMoves(rawMoves, colCount, tileCount, scoringPolicy);
+  const thresholdMoves = prepared.moves.slice().sort((a, b) =>
+    (b.staticScore + popcountBits(b.touchedRows) + popcountBits(b.touchedCols)) -
+    (a.staticScore + popcountBits(a.touchedRows) + popcountBits(a.touchedCols)) ||
+    b.staticScore - a.staticScore || a.word.localeCompare(b.word));
+  const { rows: rowMasks, columns: colMasks } = lineMasks(rowCount, colCount);
+  const initialMask = initialUsedMask(boardState.grid, boardState.tileStates);
+  const initialState = {
+    usedMask: initialMask,
+    completedRows: completedMask(initialMask, rowMasks),
+    completedCols: completedMask(initialMask, colMasks),
+    turnsUsed: 0,
+    score: 0
+  };
+  const allTilesMask = (1n << BigInt(tileCount)) - 1n;
+  const context = {
+    rowMasks,
+    colMasks,
+    lineSubsets: lineSubsetBounds(rowMasks, colMasks, scoringPolicy),
+    allTilesMask,
+    scoringPolicy
+  };
+  const compatibleMovesCache = new Map();
+  const movesByTile = Array.from({ length: tileCount }, () => []);
+  thresholdMoves.forEach((move, moveIndex) => {
+    for (const tileIndex of move.tileIndexes) movesByTile[tileIndex].push(moveIndex);
+  });
+
+  function compatibleMovesFor(usedMask, stats) {
+    const key = usedMask.toString();
+    const cached = compatibleMovesCache.get(key);
+    if (cached) {
+      if (stats) stats.compatibilityCacheHits++;
+      return cached;
+    }
+    const blocked = new Uint8Array(prepared.moves.length);
+    let remaining = usedMask;
+    while (remaining) {
+      const lowBit = remaining & -remaining;
+      const tileIndex = lowBit === 0n ? 0 : Math.log2(Number(lowBit));
+      for (const moveIndex of movesByTile[tileIndex]) blocked[moveIndex] = 1;
+      remaining ^= lowBit;
+    }
+    const compatible = [];
+    for (let moveIndex = 0; moveIndex < prepared.moves.length; moveIndex++) {
+      if (!blocked[moveIndex]) compatible.push(thresholdMoves[moveIndex]);
+    }
+    compatibleMovesCache.set(key, compatible);
+    return compatible;
+  }
+
+  return {
+    boardState,
+    grid,
+    rowCount,
+    colCount,
+    tileCount,
+    scoringPolicy,
+    rawMoves,
+    prepared,
+    allMoves: prepared.moves,
+    thresholdMoves,
+    initialState,
+    context,
+    compatibleMovesFor,
+    compatibleMovesCache,
+    stats: {
+      rawMoveCount: prepared.stats.rawMoveCount,
+      startingLegalMoveCount: prepared.stats.rawMoveCount,
+      solverRelevantMoveCount: prepared.stats.solverRelevantMoveCount,
+      uniqueTileMasks: prepared.stats.uniqueTileMasks,
+      uniqueMaskScoreCount: prepared.stats.uniqueMaskScoreCount,
+      uniquePaths: prepared.stats.uniquePaths,
+      dominatedMoveCount: prepared.stats.dominatedMoveCount
+    }
+  };
+}
+
+function findMinimumGoldTurns(boardState, wordIndex, options = {}) {
+  const started = process.hrtime.bigint();
+  const maxTurns = Math.max(1, Math.min(DEFAULT_MAX_TURNS,
+    boardState.maxTurns || options.maxTurns || DEFAULT_MAX_TURNS));
+  const goldThreshold = boardState.goldThreshold || options.goldThreshold || DEFAULT_GOLD_THRESHOLD;
+  const timeoutMs = options.timeoutMs ?? boardState.timeoutMs ?? null;
+  const certificateConstraint = options.certificateConstraint || boardState.certificateConstraint || null;
+  const solver = options.solverContext || createSolverContext(boardState, wordIndex, options);
+  const stats = {
+    ...solver.stats,
+    statesExplored: 0,
+    statesPruned: 0,
+    memoHits: 0,
+    compatibilityCacheHits: 0,
+    elapsedMs: 0,
+    timedOut: false,
+    budgetSearches: []
+  };
+  const deadline = timeoutMs === null ? null : Number(timeoutMs);
+  let timedOut = false;
+
+  function deadlineReached() {
+    if (deadline === null || !Number.isFinite(deadline)) return false;
+    if (Number(process.hrtime.bigint() - started) / 1e6 < deadline) return false;
+    timedOut = true;
+    stats.timedOut = true;
+    return true;
+  }
+
+  function stateKey(state) {
+    return `${state.turnsUsed}|${state.usedMask.toString()}|${state.completedRows}|${state.completedCols}`;
+  }
+
+  function searchBudget(budget) {
+    const memo = new Map();
+    const bestScoreAtState = new Map();
+    let found = null;
+
+    function search(state, sequence) {
+      if (deadlineReached() || found) return false;
+      stats.statesExplored++;
+      if (state.score >= goldThreshold &&
+        (!certificateConstraint || certificateConstraint(sequence, state))) {
+        found = sequence;
+        return true;
+      }
+      const remainingTurns = budget - state.turnsUsed;
+      if (remainingTurns <= 0) return false;
+      const compatible = solver.compatibleMovesFor(state.usedMask, stats);
+      if (!compatible.length) return false;
+      const optimistic = thresholdOptimisticUpperBound(state, compatible, solver.context, remainingTurns);
+      if (state.score + optimistic < goldThreshold) {
+        stats.statesPruned++;
+        return false;
+      }
+
+      const key = stateKey(state);
+      const previousBest = bestScoreAtState.get(key);
+      if (previousBest !== undefined && previousBest >= state.score) {
+        stats.statesPruned++;
+        return false;
+      }
+      bestScoreAtState.set(key, state.score);
+      if (memo.has(key)) {
+        stats.memoHits++;
+        return memo.get(key);
+      }
+
+      // prepareSolverMoves returns moves in this exact order, so sorting at
+      // every state would only add runtime without changing search semantics.
+      const ordered = compatible;
+      let reachable = false;
+      for (const move of ordered) {
+        if (deadlineReached()) break;
+        const applied = applyMove(state, move, solver.context);
+        const nextState = { ...applied.state, score: state.score + applied.scoreDelta };
+        if (search(nextState, [...sequence, applied.scoredMove])) {
+          reachable = true;
+          break;
+        }
+      }
+      memo.set(key, reachable);
+      return reachable;
+    }
+
+    const reachable = search(solver.initialState, []);
+    stats.budgetSearches.push({ budget, reachable: reachable && Boolean(found) });
+    return { reachable: reachable && Boolean(found), certificate: found };
+  }
+
+  // A reachable result at budget N is an upper bound. Search the likely
+  // lower budget first, then refine only the successful band.
+  const upperBound = Number.isInteger(options.knownUpperTurns)
+    ? Math.max(1, Math.min(maxTurns, options.knownUpperTurns)) : maxTurns;
+  let firstReachable = null;
+  const firstBudget = Math.min(
+    options.knownCertificate ? Math.max(0, upperBound - 1) : upperBound,
+    Math.min(4, maxTurns)
+  );
+  for (let budget = 1; budget <= firstBudget; budget++) {
+    const result = searchBudget(budget);
+    if (timedOut) break;
+    if (result.reachable) {
+      firstReachable = { budget, certificate: result.certificate };
+      break;
+    }
+  }
+  if (!timedOut && !firstReachable) {
+    for (let budget = firstBudget + 1; budget <= upperBound; budget++) {
+      if (budget === upperBound && options.knownCertificate) {
+        firstReachable = { budget, certificate: options.knownCertificate };
+        stats.budgetSearches.push({ budget, reachable: true, reusedCertificate: true });
+        break;
+      }
+      const result = searchBudget(budget);
+      if (timedOut) break;
+      if (result.reachable) {
+        firstReachable = { budget, certificate: result.certificate };
+        break;
+      }
+    }
+  }
+  if (!timedOut && !firstReachable && upperBound < maxTurns) {
+    if (options.knownCertificate) {
+      firstReachable = { budget: upperBound, certificate: options.knownCertificate };
+      stats.budgetSearches.push({ budget: upperBound, reachable: true, reusedCertificate: true });
+    } else {
+      const result = searchBudget(maxTurns);
+      if (!timedOut && result.reachable) {
+        firstReachable = { budget: maxTurns, certificate: result.certificate };
+      }
+    }
+  }
+  stats.elapsedMs = Number(process.hrtime.bigint() - started) / 1e6;
+  if (timedOut) {
+    return { reachable: null, exact: false, minimumTurns: null, status: 'timeout', certificate: null, stats };
+  }
+  if (!firstReachable) {
+    return { reachable: false, exact: true, minimumTurns: null, status: 'unreachable', certificate: null, stats };
+  }
+  const replay = replaySequence(boardState, firstReachable.certificate);
+  return {
+    reachable: true,
+    exact: true,
+    minimumTurns: firstReachable.budget,
+    status: 'reachable',
+    certificate: firstReachable.certificate,
+    replay,
+    stats
   };
 }
 
@@ -564,6 +831,8 @@ function solveBoard(boardState, wordIndex, options = {}) {
 
 module.exports = {
   solveBoard,
+  createSolverContext,
+  findMinimumGoldTurns,
   replaySequence,
   applyMove,
   optimisticUpperBound,
