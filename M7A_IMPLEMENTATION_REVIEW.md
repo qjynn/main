@@ -94,8 +94,8 @@ max first-move score: 30
 median first-move score: 15
 Gold score: 110
 Gold turns: 5
-Gold without Hexalink: true
-Hexalink required Gold: true
+goldReachableWithoutHexalink: true
+goldReachableWithHexalinkRequired: true
 Hexalink rows touched: 4
 Hexalink columns touched: 3
 Hexalink direction changes: 3
