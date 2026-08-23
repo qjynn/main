@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Qjynn</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/qjynn_favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/qjynn_favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/qjynn_favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="images/qjynn_favicon.ico/manifest.json">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #f5f7f9;
+      color: #111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #app {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+    }
+    #game {
+      display: block;
+      margin: 0 auto;
+      background: #fff;
+      touch-action: none;
+      user-select: none;
+    }
+    #clueDisplay {
+      position: absolute;
+      top: 72px;
+      transform: translateX(-50%);
+      z-index: 10;
+      width: 90vw;
+      max-width: 1000px;
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(245, 245, 245, 0.88);
+      color: #111;
+      font: 14px Arial, Helvetica, sans-serif;
+      line-height: 1.25;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(8px);
+      pointer-events: none;
+    }
+    #clueDisplay.hidden { display: none; }
+    #tutorialBackBtn {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 30;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 20px;
+      background: #111;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    #gameOverMessage {
+      position: fixed;
+      left: 50%;
+      top: 60px;
+      z-index: 40;
+      display: none;
+      transform: translateX(-50%);
+      align-items: center;
+      gap: 10px;
+      min-width: 260px;
+      max-width: 90vw;
+      padding: 14px 28px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.98);
+      color: #111827;
+      font-size: 19px;
+      font-weight: 600;
+      text-align: center;
+      white-space: nowrap;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      pointer-events: auto;
+    }
+    #gameOverMessage img {
+      width: 32px;
+      height: 32px;
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #f0f0f0;
+    }
+    .title {
+      margin: 0 0 16px 0;
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: -2px;
+    }
+    .icon {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 32px;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .description {
+      max-width: 320px;
+      margin-bottom: 40px;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.4;
+      text-align: center;
+    }
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .play-btn, .tutorial-btn {
+      min-width: 132px;
+      border: 0;
+      border-radius: 14px;
+      padding: 16px 24px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.12s ease, background 0.18s;
+    }
+    .play-btn {
+      background: #000;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    .play-btn:active { transform: scale(0.96); }
+    .tutorial-btn {
+      background: #444;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+    .tutorial-btn:hover { background: #555; }
+    .tutorial-btn:active { transform: scale(0.97); }
+    .date {
+      margin-top: 48px;
+      color: #666;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="clueDisplay"></div>
+    <button id="tutorialBackBtn" type="button" aria-label="Back">&lsaquo;</button>
+    <canvas id="game"></canvas>
+    <div id="gameOverMessage">
+      <img id="shareIconInMessage" alt="" src="images/share_icon.svg">
+      <span>Game over. Tap the share icon in the status row.</span>
+    </div>
+  </div>
+
+  <div id="splash">
+    <div class="icon">
+      <img src="images/qjynn2_64x64.jpg" alt="Qjynn icon">
+    </div>
+    <h1 class="title">Qjynn</h1>
+    <p class="description">A 6-Turn Strategic Word Game<br>Master words. Win medals.</p>
+    <div class="buttons-container">
+      <button class="play-btn" type="button" id="playBtn">Play</button>
+      <button class="tutorial-btn" type="button" id="tutorialBtn">How to Play</button>
+    </div>
+    <div class="date" id="dateDisplay"></div>
+  </div>
+
+  <script>
+    var clueDisplay = document.getElementById('clueDisplay');
+    var tutorialBackBtn = document.getElementById('tutorialBackBtn');
+
+    window.EMBEDDED_LAYOUT = {
+      date: '2025-11-30',
+      clue: 'Daily Clue: large summer striped fruit',
+      grid: [
+        [{ l: 'M' }, { l: 'V' }, { l: 'Y' }, { l: 'B' }, { l: 'N' }, { l: 'R' }],
+        [{ l: 'Y' }, { l: 'B' }, { l: 'Q' }, { l: 'F' }, { l: 'R' }, { l: 'L' }],
+        [{ l: 'V' }, { l: 'D' }, { l: 'L' }, { l: 'W' }, { l: 'T' }, { l: 'H' }],
+        [{ l: 'C' }, { l: 'D' }, { l: 'L' }, { l: 'N' }, { l: 'Z' }, { l: 'N' }],
+        [{ l: 'K' }, { l: 'N' }, { l: 'S' }, { l: 'M' }, { l: 'L' }, { l: 'G' }],
+        [{ l: 'W' }, { l: 'S' }, { l: 'R' }, { l: 'T' }, { l: 'S' }, { l: 'X' }],
+        [{ l: 'J' }, { l: 'T' }, { l: 'R' }, { l: 'T' }, { l: 'H' }, { l: 'P' }],
+        [{ l: 'G' }, { l: 'S' }, { l: 'C' }, { l: 'F' }, { l: 'D' }, { l: 'P' }]
+      ],
+      hexalink: 'WTRMLN',
+      hexarowcol: [[5, 0], [6, 1], [5, 2], [4, 3], [4, 4], [3, 5]]
+    };
+
+    document.getElementById('dateDisplay').textContent =
+      new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+
+    function showGame() {
+      document.getElementById('splash').style.display = 'none';
+      window.dispatchEvent(new Event('resize'));
+    }
+
+    document.getElementById('playBtn').addEventListener('click', showGame);
+    document.getElementById('tutorialBtn').addEventListener('click', function () {
+      showGame();
+      if (typeof startTutorial === 'function') startTutorial();
+    });
+
+    window.addEventListener('gameReady', function () {
+      if (new URLSearchParams(window.location.search).get('tutorial') === '1') {
+        showGame();
+        if (typeof startTutorial === 'function') startTutorial();
+      }
+    });
+  </script>
+  <script src="qjynn-rules.js"></script>
+  <script src="word-validator.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
