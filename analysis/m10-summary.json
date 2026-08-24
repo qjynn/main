@@ -1,0 +1,32 @@
+{
+  "milestone": "M10",
+  "answersEvaluated": 30,
+  "primaryOnlySuccess": 1,
+  "primaryPlusOneBackup": 1,
+  "primaryPlusTwoBackups": 1,
+  "blockedRate": 0,
+  "confidenceDistribution": {
+    "ACCEPTABLE": 30
+  },
+  "gateDistribution": {
+    "STRUCTURAL_CERTIFICATION_PASS": 90,
+    "DATA_INTEGRITY_PASS": 90,
+    "REAL_FAMILIARITY_PASS": 90,
+    "COMPARATIVE_DIFFICULTY_PASS": 90,
+    "MEDAL_DISTRIBUTION_PASS": 90,
+    "VOCABULARY_ACCESSIBILITY_WARN": 90,
+    "MOVE_SPACE_SANITY_PASS": 84,
+    "TILE_PARTICIPATION_WARN": 90,
+    "HEXALINK_SANITY_PASS": 90,
+    "HISTORICAL_SIMILARITY_PASS": 90,
+    "SELECTION_MARGIN_PASS": 90,
+    "MONTE_CARLO_STABILITY_PASS": 90,
+    "PUBLIC_PRIVATE_SEPARATION_PASS": 90,
+    "ARTIFACT_SCHEMA_PASS": 90,
+    "REPRODUCIBILITY_PASS": 90,
+    "MOVE_SPACE_SANITY_WARN": 6
+  },
+  "validatorMutationRejectionRate": 1,
+  "regenerationRounds": [],
+  "note": "M10 does not publish to the live website."
+}

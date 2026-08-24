@@ -1,0 +1,92 @@
+{
+  "selector": "M9.1",
+  "answersEvaluated": 30,
+  "provider": {
+    "provider": "wordfreq",
+    "sourceVersion": "v3.2",
+    "packageVersion": "3.1.1",
+    "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+    "normalizationVersion": "zipf-linear-v1",
+    "source": "https://github.com/rspeer/wordfreq",
+    "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+    "wordlist": "large",
+    "language": "en"
+  },
+  "referenceRuns": 500,
+  "tenAnswerReferenceStability": [
+    {
+      "answer": "WATERMELON",
+      "spearman_500_vs_1000": 0.9636363636363636,
+      "preferred_band_agreement": 0.8,
+      "winner_500": "996c2929",
+      "winner_1000": "ee0d57a5"
+    },
+    {
+      "answer": "OSCILLATED",
+      "spearman_500_vs_1000": 0.9151515151515152,
+      "preferred_band_agreement": 1,
+      "winner_500": "b292482e",
+      "winner_1000": "b292482e"
+    },
+    {
+      "answer": "ABANDONING",
+      "spearman_500_vs_1000": 0.9272727272727272,
+      "preferred_band_agreement": 0.8,
+      "winner_500": "7c9afa28",
+      "winner_1000": "2ee70183"
+    },
+    {
+      "answer": "ABSOLUTELY",
+      "spearman_500_vs_1000": 0.9878787878787879,
+      "preferred_band_agreement": 1,
+      "winner_500": "d34ce228",
+      "winner_1000": "d34ce228"
+    },
+    {
+      "answer": "ACCESSIBLE",
+      "spearman_500_vs_1000": 0.9757575757575757,
+      "preferred_band_agreement": 1,
+      "winner_500": "acdfe13a",
+      "winner_1000": "25cba3a8"
+    },
+    {
+      "answer": "ACCOUNTING",
+      "spearman_500_vs_1000": 0.8787878787878788,
+      "preferred_band_agreement": 0.6,
+      "winner_500": "d319248d",
+      "winner_1000": "3013559f"
+    },
+    {
+      "answer": "ADVENTURES",
+      "spearman_500_vs_1000": 0.7696969696969697,
+      "preferred_band_agreement": 0.8,
+      "winner_500": "7e10135e",
+      "winner_1000": "7c76165a"
+    },
+    {
+      "answer": "AGGRAVATED",
+      "spearman_500_vs_1000": 0.8666666666666667,
+      "preferred_band_agreement": 0.8,
+      "winner_500": "7a572bc7",
+      "winner_1000": "64caa252"
+    },
+    {
+      "answer": "AFTERTASTE",
+      "spearman_500_vs_1000": 0.8545454545454545,
+      "preferred_band_agreement": 0.8,
+      "winner_500": "5484c7c7",
+      "winner_1000": "72119b9b"
+    },
+    {
+      "answer": "AFFORDABLE",
+      "spearman_500_vs_1000": 0.9757575757575757,
+      "preferred_band_agreement": 1,
+      "winner_500": "c7186004",
+      "winner_1000": "9754f439"
+    }
+  ],
+  "bestLowMeanRecall": 1,
+  "zeroRecallRateLowMean": 0,
+  "strongChangeRate": 0.8666666666666667,
+  "note": "M9 math shortlist remains available; M9.1 validation is simulation-first and does not modify M9."
+}

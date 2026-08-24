@@ -1,0 +1,31 @@
+{
+  "selector": "M9",
+  "answersEvaluated": 30,
+  "successfulSelections": 30,
+  "selectionFailures": 0,
+  "config": {
+    "rawCandidates": 10,
+    "certifiedCandidateTarget": 5,
+    "shortlistSize": 5,
+    "regularRuns": 250,
+    "strongFinalistCount": 3,
+    "strongRuns": 250,
+    "maxAttemptsPerCandidate": 20,
+    "difficultyPolicy": {
+      "preferredBand": "middle",
+      "allowAdjacentBands": true
+    },
+    "accessibilityGuardrail": "diagnostic-only",
+    "hexalinkPolicy": "diagnostic-only",
+    "candidateGenerator": "M6_BASELINE"
+  },
+  "bandSelections": {
+    "middle": 26,
+    "harder": 4
+  },
+  "deterministicRerunMismatches": [],
+  "meanCertifiedCandidates": 10,
+  "meanShortlistSize": 5,
+  "meanFinalists": 3,
+  "note": "M7B paired grids were unavailable; comparison remains explicitly unavailable."
+}
