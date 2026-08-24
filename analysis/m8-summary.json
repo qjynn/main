@@ -1,0 +1,163 @@
+{
+  "puzzleCount": 30,
+  "distinctAnswers": 10,
+  "repeatedSeedComposition": true,
+  "failures": [],
+  "runsPerModel": 100,
+  "models": [
+    {
+      "player_model": "CASUAL",
+      "mean_puzzle_score": 87.25866666666668,
+      "mean_gold_rate": 0.18633333333333332,
+      "mean_silver_rate": 0.7263333333333332,
+      "mean_bronze_rate": 0.08733333333333333,
+      "mean_hexalink_rate": 0.44866666666666666,
+      "mean_completion_rate": 1
+    },
+    {
+      "player_model": "REGULAR",
+      "mean_puzzle_score": 111.458,
+      "mean_gold_rate": 0.8346666666666669,
+      "mean_silver_rate": 0.1646666666666667,
+      "mean_bronze_rate": 0.0006666666666666666,
+      "mean_hexalink_rate": 0.6306666666666667,
+      "mean_completion_rate": 1
+    },
+    {
+      "player_model": "STRONG",
+      "mean_puzzle_score": 121.98766666666667,
+      "mean_gold_rate": 0.9773333333333334,
+      "mean_silver_rate": 0.022666666666666672,
+      "mean_bronze_rate": 0,
+      "mean_hexalink_rate": 0.7429999999999999,
+      "mean_completion_rate": 1
+    },
+    {
+      "player_model": "EXPERT",
+      "mean_puzzle_score": 128.22833333333335,
+      "mean_gold_rate": 0.9969999999999999,
+      "mean_silver_rate": 0.003,
+      "mean_bronze_rate": 0,
+      "mean_hexalink_rate": 0.799,
+      "mean_completion_rate": 1
+    },
+    {
+      "player_model": "ORACLE",
+      "mean_puzzle_score": 108.5,
+      "mean_gold_rate": 1,
+      "mean_silver_rate": 0,
+      "mean_bronze_rate": 0,
+      "mean_hexalink_rate": 1,
+      "mean_completion_rate": 0
+    }
+  ],
+  "spread": {
+    "CASUAL": {
+      "min": 0.06,
+      "p25": 0.08,
+      "median": 0.18,
+      "p75": 0.25,
+      "max": 0.39
+    },
+    "REGULAR": {
+      "min": 0.6,
+      "p25": 0.74,
+      "median": 0.89,
+      "p75": 0.92,
+      "max": 0.96
+    },
+    "STRONG": {
+      "min": 0.87,
+      "p25": 0.97,
+      "median": 0.99,
+      "p75": 1,
+      "max": 1
+    },
+    "EXPERT": {
+      "min": 0.95,
+      "p25": 1,
+      "median": 1,
+      "p75": 1,
+      "max": 1
+    }
+  },
+  "skillOrdering": {
+    "regularVsCasual": 1,
+    "strongVsRegular": 1,
+    "expertVsStrong": 1
+  },
+  "rankCorrelations": {
+    "casualRegular": 0.7334816462736373,
+    "regularStrong": 0.7877641824249166,
+    "strongExpert": 0.2707452725250278
+  },
+  "familiarityBasis": "heuristic",
+  "convergence": [
+    {
+      "runs": 100,
+      "model": "REGULAR",
+      "mean_score": 104.11,
+      "gold_rate": 0.68,
+      "hexalink_rate": 0
+    },
+    {
+      "runs": 250,
+      "model": "REGULAR",
+      "mean_score": 103.696,
+      "gold_rate": 0.644,
+      "hexalink_rate": 0
+    },
+    {
+      "runs": 500,
+      "model": "REGULAR",
+      "mean_score": 103.142,
+      "gold_rate": 0.626,
+      "hexalink_rate": 0
+    }
+  ],
+  "sensitivity": [
+    {
+      "parameter": "maxCandidateMoves",
+      "model": "REGULAR",
+      "setting": 8,
+      "mean_score": 88.43,
+      "gold_rate": 0.1
+    },
+    {
+      "parameter": "maxCandidateMoves",
+      "model": "REGULAR",
+      "setting": 40,
+      "mean_score": 125.37,
+      "gold_rate": 0.96
+    },
+    {
+      "parameter": "temperature",
+      "model": "REGULAR",
+      "setting": 1.5,
+      "mean_score": 108.98,
+      "gold_rate": 0.81
+    },
+    {
+      "parameter": "temperature",
+      "model": "REGULAR",
+      "setting": 5,
+      "mean_score": 96.32,
+      "gold_rate": 0.37
+    },
+    {
+      "parameter": "hexalinkRecognition",
+      "model": "REGULAR",
+      "setting": 0.2,
+      "mean_score": 103.91,
+      "gold_rate": 0.66
+    },
+    {
+      "parameter": "hexalinkRecognition",
+      "model": "REGULAR",
+      "setting": 0.7,
+      "mean_score": 102.55,
+      "gold_rate": 0.64
+    }
+  ],
+  "m6VsM7b": "not available: no paired M7B puzzle artifact in repository"
+}

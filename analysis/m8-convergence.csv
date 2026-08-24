@@ -1,0 +1,4 @@
+runs,model,mean_score,gold_rate,hexalink_rate
+100,REGULAR,104.11,0.68,0
+250,REGULAR,103.696,0.644,0
+500,REGULAR,103.142,0.626,0

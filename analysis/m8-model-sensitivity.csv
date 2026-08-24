@@ -1,0 +1,7 @@
+parameter,model,setting,mean_score,gold_rate
+maxCandidateMoves,REGULAR,8,88.43,0.1
+maxCandidateMoves,REGULAR,40,125.37,0.96
+temperature,REGULAR,1.5,108.98,0.81
+temperature,REGULAR,5,96.32,0.37
+hexalinkRecognition,REGULAR,0.2,103.91,0.66
+hexalinkRecognition,REGULAR,0.7,102.55,0.64
