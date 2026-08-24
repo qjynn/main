@@ -35,9 +35,9 @@ function candidateRecord(candidate, index, answer, wordIndex) {
   return { candidateId: m10CandidateId(answer, candidate.candidateSeed, gridHash), candidateIndex: candidate.candidateIndex, candidateSeed: candidate.candidateSeed, gridHash, puzzle: candidate.puzzle, privateCertification: candidate.privateCertification, certified: candidate.hardGateStatus === 'accepted' && Number(candidate.privateCertification?.goldScore || 0) >= 100, certificateScore: candidate.privateCertification?.goldScore || null, certificateTurns: candidate.privateCertification?.goldTurns || null, uniquePlayableWords: cheap.uniquePlayableWords, cheapMetricValue: cheap.uniquePlayableWords, rawLegalMoves: cheap.rawMoves, uniqueTileMasks: cheap.uniqueTileMasks, tileParticipationSpread: cheap.tileParticipationSpread, hexalinkRowsTouched: hex.rowsTouched, hexalinkColumnsTouched: hex.columnsTouched, shortlisted: false, finalist: false };
 }
 function metadata(providerMetadata) { return { policyVersion: M10_POLICY_VERSION, gateVersion: M10_GATE_VERSION, selectorVersion: M10_SELECTOR_VERSION, generatorVersion: GENERATOR_VERSION, rulesVersion: RULES_VERSION, vocabularyVersion: VOCABULARY_VERSION, simulatorVersion: 'm8.1', playerModelVersion: 'm8.1.players.0', familiarity: providerMetadata, publicationValidatorVersion: PUBLICATION_VALIDATOR_VERSION } }
-function sortFinalists(candidates) {
+function sortFinalists(candidates, requiredCount = 1) {
   const middle = candidates.filter(candidate => candidate.difficultyBand === 'middle');
-  const eligible = middle.length ? middle : candidates;
+  const eligible = middle.length >= requiredCount ? middle : candidates;
   const center = eligible.reduce((sum, candidate) => sum + candidate.regularMeanScore, 0) / eligible.length;
   return eligible.slice().sort((a, b) => Math.abs(a.regularMeanScore - center) - Math.abs(b.regularMeanScore - center) || Number(b.strongMeanScore || 0) - Number(a.strongMeanScore || 0) || a.candidateId.localeCompare(b.candidateId));
 }
@@ -68,7 +68,7 @@ function generateRound(input, wordIndex, config, providerInfo, round, history) {
   const gateRows = [];
   const reproducibleIds = new Set(pool.candidates.map(candidate => m10CandidateId(input.answer, candidate.candidateSeed, candidate.gridHash || canonicalGridHash(candidate.puzzle.grid))));
   const baseMeta = metadata(providerInfo.provider.metadata);
-  for (const candidate of sortFinalists(complete)) {
+  for (const candidate of sortFinalists(complete, config.strongFinalistCount)) {
     const temporaryManifest = { schemaVersion: PRIVATE_SCHEMA_VERSION, answer: input.answer, clue: input.clue, date: input.date, certificate: candidate.privateCertification?.goldCertificate || [], hashes: {}, metadata: baseMeta };
     const validator = validatePublicationArtifacts({ publicPuzzle: candidate.puzzle, privateManifest: temporaryManifest, wordIndex });
     const gates = evaluateCandidateGates(candidate, { pool: complete, metadata: baseMeta, historical: createHistoricalEnvelope(history || []), allowAdjacentBands: config.difficultyPolicy.allowAdjacentBands, publicPrivateOk: publicPrivateOk(candidate.puzzle), schemaOk: validator.ok, reproducible: reproducibleIds.has(candidate.candidateId) });

@@ -19,7 +19,10 @@ function validatePublicationArtifacts(input = {}) {
   if (privateManifest?.metadata?.selectorVersion && (!privateManifest.metadata.generatorVersion || !privateManifest.metadata.simulatorVersion || !privateManifest.metadata.playerModelVersion)) errors.push(error('version.metadata', 'Private manifest version metadata is incomplete.'));
   if (publicPuzzle && Object.keys(publicPuzzle).some(key => ['answer', 'certificate', 'goldCertificate', 'privateMetadata', 'regularProfile', 'candidatePool', 'selectionExplanation'].includes(key))) errors.push(error('privacy.leakage', 'Public artifact contains private data.'));
   if (publicPuzzle && privateManifest?.answer && privateManifest.answer === publicPuzzle.answer) errors.push(error('privacy.answer', 'Answer is present in the public artifact.'));
-  const structural = publicPuzzle && privateManifest ? validatePuzzle(publicPuzzle, { answer: privateManifest.answer, wordIndex }) : { ok: false, errors: [] };
+  let structural = { ok: false, errors: [] };
+  if (publicPuzzle && privateManifest) {
+    try { structural = validatePuzzle(publicPuzzle, { answer: privateManifest.answer, wordIndex }); } catch (cause) { errors.push(error('puzzle.validation_exception', cause.message)); }
+  }
   for (const item of structural.errors || []) errors.push(error(item.code, item.message));
   const certificate = privateManifest?.certificate || privateManifest?.m6?.goldCertificate || [];
   if (!certificate.length) errors.push(error('certificate.missing', 'Gold certificate is missing.'));

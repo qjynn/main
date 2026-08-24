@@ -1,0 +1,4 @@
+date,corruption_case,original_primary,promoted_candidate,promotion_level,result
+2032-07-05,primary,,ACCESSIBLE-2e169f1b,1,PROMOTED
+2032-07-06,primary+backup1,,ACCOUNTING-bc215f22,2,PROMOTED
+2032-07-07,all-three,,,0,BLOCKED

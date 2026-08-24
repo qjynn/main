@@ -1,0 +1,8 @@
+test,rejected_or_safely_recovered,result
+missing public file,true,SAFE_FAILURE_OR_BACKUP_PATH
+modified public hash,true,SAFE_FAILURE_OR_BACKUP_PATH
+missing private manifest,true,SAFE_FAILURE_OR_BACKUP_PATH
+bad queue reference,true,SAFE_FAILURE_OR_BACKUP_PATH
+duplicate active state,true,SAFE_FAILURE_OR_BACKUP_PATH
+future marked active,true,SAFE_FAILURE_OR_BACKUP_PATH
+wrong date/puzzle id,true,SAFE_FAILURE_OR_BACKUP_PATH

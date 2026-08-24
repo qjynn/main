@@ -1,0 +1,11 @@
+{
+  "milestone": "M11",
+  "simulatedDates": 14,
+  "correctActivations": 14,
+  "wrongDateDeliveries": 0,
+  "futureLeaks": 0,
+  "backupPromotions": 2,
+  "blockedDates": 1,
+  "catalogReady": 14,
+  "note": "M11 does not deploy or publish to the live website."
+}
