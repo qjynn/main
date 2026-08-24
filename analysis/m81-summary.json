@@ -1,0 +1,187 @@
+{
+  "provider": {
+    "provider": "wordfreq",
+    "sourceVersion": "v3.2",
+    "packageVersion": "3.1.1",
+    "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+    "normalizationVersion": "zipf-linear-v1",
+    "sourceUrl": "https://github.com/rspeer/wordfreq",
+    "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+    "fileLoaded": true,
+    "fallbackUsed": false,
+    "matchedWords": 41318,
+    "qjynnWords": 41814,
+    "coveragePct": 98.81379442292055
+  },
+  "dataset": {
+    "puzzles": 10,
+    "distinctAnswers": 10,
+    "runsPerModel": 500,
+    "source": "M7A3_EXISTING_M6_GRID"
+  },
+  "curves": {
+    "CASUAL": {
+      "midpoint": 0.7,
+      "slope": 4.2,
+      "ceiling": 0.76,
+      "floor": 0.02
+    },
+    "REGULAR": {
+      "midpoint": 0.58,
+      "slope": 4.8,
+      "ceiling": 0.88,
+      "floor": 0.04
+    },
+    "STRONG": {
+      "midpoint": 0.45,
+      "slope": 5.2,
+      "ceiling": 0.96,
+      "floor": 0.06
+    },
+    "EXPERT": {
+      "midpoint": 0.32,
+      "slope": 5.5,
+      "ceiling": 0.995,
+      "floor": 0.08
+    },
+    "ORACLE": {
+      "midpoint": 0,
+      "slope": 1,
+      "ceiling": 1,
+      "floor": 1
+    }
+  },
+  "ranking": [
+    {
+      "player_model": "CASUAL",
+      "gold_rate_rank_stability": 0.6848484848484848,
+      "mean_score_delta": -18.837
+    },
+    {
+      "player_model": "REGULAR",
+      "gold_rate_rank_stability": 0.5515151515151515,
+      "mean_score_delta": -29.894399999999997
+    },
+    {
+      "player_model": "STRONG",
+      "gold_rate_rank_stability": 0.38181818181818183,
+      "mean_score_delta": -33.5038
+    },
+    {
+      "player_model": "EXPERT",
+      "gold_rate_rank_stability": 0.4424242424242424,
+      "mean_score_delta": -29.566600000000005
+    }
+  ],
+  "familiaritySanity": [
+    {
+      "word": "house",
+      "frequency": 5.71,
+      "rank": 174,
+      "normalizedFrequency": 0.6728571428571428,
+      "familiarityScore": 0.6728571428571428,
+      "source": "https://github.com/rspeer/wordfreq",
+      "sourceVersion": "v3.2",
+      "normalizationVersion": "zipf-linear-v1",
+      "basis": "frequency",
+      "found": true,
+      "provider": "wordfreq",
+      "packageVersion": "3.1.1",
+      "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+      "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+      "wordlist": "large",
+      "language": "en"
+    },
+    {
+      "word": "water",
+      "frequency": 5.52,
+      "rank": 266,
+      "normalizedFrequency": 0.6457142857142857,
+      "familiarityScore": 0.6457142857142857,
+      "source": "https://github.com/rspeer/wordfreq",
+      "sourceVersion": "v3.2",
+      "normalizationVersion": "zipf-linear-v1",
+      "basis": "frequency",
+      "found": true,
+      "provider": "wordfreq",
+      "packageVersion": "3.1.1",
+      "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+      "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+      "wordlist": "large",
+      "language": "en"
+    },
+    {
+      "word": "money",
+      "frequency": 5.64,
+      "rank": 197,
+      "normalizedFrequency": 0.6628571428571428,
+      "familiarityScore": 0.6628571428571428,
+      "source": "https://github.com/rspeer/wordfreq",
+      "sourceVersion": "v3.2",
+      "normalizationVersion": "zipf-linear-v1",
+      "basis": "frequency",
+      "found": true,
+      "provider": "wordfreq",
+      "packageVersion": "3.1.1",
+      "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+      "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+      "wordlist": "large",
+      "language": "en"
+    },
+    {
+      "word": "plant",
+      "frequency": 4.89,
+      "rank": 1334,
+      "normalizedFrequency": 0.5557142857142857,
+      "familiarityScore": 0.5557142857142857,
+      "source": "https://github.com/rspeer/wordfreq",
+      "sourceVersion": "v3.2",
+      "normalizationVersion": "zipf-linear-v1",
+      "basis": "frequency",
+      "found": true,
+      "provider": "wordfreq",
+      "packageVersion": "3.1.1",
+      "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+      "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+      "wordlist": "large",
+      "language": "en"
+    },
+    {
+      "word": "market",
+      "frequency": 5.29,
+      "rank": 486,
+      "normalizedFrequency": 0.6128571428571429,
+      "familiarityScore": 0.6128571428571429,
+      "source": "https://github.com/rspeer/wordfreq",
+      "sourceVersion": "v3.2",
+      "normalizationVersion": "zipf-linear-v1",
+      "basis": "frequency",
+      "found": true,
+      "provider": "wordfreq",
+      "packageVersion": "3.1.1",
+      "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+      "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+      "wordlist": "large",
+      "language": "en"
+    },
+    {
+      "word": "family",
+      "frequency": 5.66,
+      "rank": 192,
+      "normalizedFrequency": 0.6657142857142857,
+      "familiarityScore": 0.6657142857142857,
+      "source": "https://github.com/rspeer/wordfreq",
+      "sourceVersion": "v3.2",
+      "normalizationVersion": "zipf-linear-v1",
+      "basis": "frequency",
+      "found": true,
+      "provider": "wordfreq",
+      "packageVersion": "3.1.1",
+      "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+      "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+      "wordlist": "large",
+      "language": "en"
+    }
+  ],
+  "note": "frequency source loaded"
+}

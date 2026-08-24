@@ -1,0 +1,39 @@
+{
+  "benchmarkVersion": "m8.2.0",
+  "population": {
+    "target": 100,
+    "actualDistinctGrids": 50,
+    "actualDistinctAnswers": 50,
+    "m7bGrids": 0,
+    "m6Grids": 50
+  },
+  "runs": {
+    "primaryPerModelPerReplicate": 500,
+    "replicates": 3,
+    "primaryModels": [
+      "REGULAR",
+      "STRONG"
+    ],
+    "secondaryModels": [
+      "CASUAL",
+      "EXPERT"
+    ],
+    "secondaryPuzzles": 20,
+    "totalSimulations": 202500
+  },
+  "source": {
+    "provider": "wordfreq",
+    "sourceVersion": "v3.2",
+    "packageVersion": "3.1.1",
+    "sourceRevision": "42233e6c36ce792031bcccfa17cdd0cec9af5fa7",
+    "normalizationVersion": "zipf-linear-v1",
+    "source": "https://github.com/rspeer/wordfreq",
+    "license": "Apache-2.0 code; included source data requires CC BY-SA 4.0 attribution",
+    "wordlist": "large",
+    "language": "en"
+  },
+  "simulatorVersion": "m8.1",
+  "playerModelVersion": "m8.1.players.0",
+  "recommendation": "B",
+  "note": "50 legitimate distinct grids were available locally; exact ordinal ranking and parameter-specific rank matrices require larger populations."
+}

@@ -1,0 +1,5 @@
+player_model,gold_rate_rank_stability,mean_score_delta,familiarity_source,source_version,source_package_version,source_revision,normalization_version,fallback_used
+CASUAL,0.6848484848484848,-18.837,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+REGULAR,0.5515151515151515,-29.894399999999997,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+STRONG,0.38181818181818183,-33.5038,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+EXPERT,0.4424242424242424,-29.566600000000005,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false

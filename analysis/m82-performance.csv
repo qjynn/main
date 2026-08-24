@@ -1,0 +1,2 @@
+model,runs,puzzles,total_simulations,elapsed_ms,ms_per_simulation,ms_per_puzzle,familiarity_source,source_version,normalization_version,fallback_used
+PRIMARY_REGULAR_STRONG,500,50,202500,960536.142396,4.743388357511111,19210.72284792,wordfreq,v3.2,zipf-linear-v1,false

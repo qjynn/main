@@ -18,6 +18,27 @@ function confidenceInterval(rate, runs) {
   return { lower: Math.max(0, rate - margin), upper: Math.min(1, rate + margin) };
 }
 
+function goldVocabularyMetrics(results, thresholds = [0.25, 0.5, 0.75]) {
+  const gold = results.filter(result => result.medal === 'gold');
+  const goldWords = gold.flatMap(result => result.moveHistory.filter(move => move.type === 'move'));
+  const familiarity = goldWords.map(move => move.accessibility).filter(Number.isFinite);
+  const low = threshold => gold.length ? gold.filter(result => {
+    const words = result.moveHistory.filter(move => move.type === 'move');
+    return words.some(move => Number.isFinite(move.accessibility) && move.accessibility < threshold);
+  }).length / gold.length : 0;
+  const multipleLow = threshold => gold.length ? gold.filter(result => {
+    const words = result.moveHistory.filter(move => move.type === 'move');
+    return words.filter(move => Number.isFinite(move.accessibility) && move.accessibility < threshold).length >= 2;
+  }).length / gold.length : 0;
+  return {
+    goldGames: gold.length,
+    meanGoldWordFamiliarity: mean(familiarity),
+    medianGoldWordFamiliarity: percentile(familiarity, 50),
+    leastFamiliarGoldWord: goldWords.sort((a, b) => a.accessibility - b.accessibility)[0]?.word || null,
+    byThreshold: Object.fromEntries(thresholds.map(threshold => [threshold, { familiarOnlyGoldRate: gold.length ? gold.filter(result => result.moveHistory.filter(move => move.type === 'move').every(move => move.accessibility >= threshold)).length / gold.length : 0, rareWordDependencyRate: low(threshold), multipleRareWordDependencyRate: multipleLow(threshold) }]))
+  };
+}
+
 function simulatePuzzleMonteCarlo(input, wordIndex, options = {}) {
   const model = resolvePlayerModel(input.playerModel || options.playerModel || 'REGULAR', options.modelOverrides || {});
   const runs = Math.max(1, Math.floor(input.runs ?? options.runs ?? 1000));
@@ -34,6 +55,7 @@ function simulatePuzzleMonteCarlo(input, wordIndex, options = {}) {
   const count = medal => results.filter(result => result.medal === medal).length / runs;
   const hexTurns = results.map(result => result.hexalinkTurn).filter(Number.isFinite);
   const numeric = key => mean(results.map(result => result[key]));
+  const diagnostics = results.flatMap(result => result.simulationMetadata.discoveryDiagnostics || []);
   return {
     runs,
     playerModel: model.name,
@@ -51,6 +73,11 @@ function simulatePuzzleMonteCarlo(input, wordIndex, options = {}) {
     meanTurnsUsed: numeric('turnsPlayed'), meanRowsCompleted: numeric('rowsCompleted'),
     meanColumnsCompleted: numeric('columnsCompleted'), meanInvalidAttempts: numeric('invalidAttempts'),
     meanHintUse: numeric('hintUsed'), meanValidWords: numeric('wordsPlayed'),
+    meanKnownMoves: mean(diagnostics.map(item => item.estimatedKnownMoves)),
+    meanNoticedMoves: mean(diagnostics.map(item => item.noticedMoves)),
+    meanSampledMoves: mean(diagnostics.map(item => item.sampledMoves)),
+    meanLegalMovesAvailable: mean(diagnostics.map(item => item.legalMovesAvailable)),
+    goldVocabulary: goldVocabularyMetrics(results),
     meanImmediateScorePerTurn: mean(results.flatMap(result => result.moveHistory.filter(move => move.type === 'move').map(move => move.scoreDelta))),
     meanWordLength: mean(results.flatMap(result => result.moveHistory.filter(move => move.type === 'move').map(move => move.word.length))),
     meanRemainingLegalMoves: mean(results.flatMap(result => result.moveHistory.filter(move => move.type === 'move').map(move => move.remainingLegalMoves))),
@@ -66,4 +93,4 @@ function simulatePuzzleMonteCarlo(input, wordIndex, options = {}) {
   };
 }
 
-module.exports = { simulatePuzzleMonteCarlo, percentile, standardDeviation, confidenceInterval };
+module.exports = { simulatePuzzleMonteCarlo, percentile, standardDeviation, confidenceInterval, goldVocabularyMetrics };

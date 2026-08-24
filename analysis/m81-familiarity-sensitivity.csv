@@ -1,0 +1,4 @@
+parameter,setting,model,mean_score,gold_rate,hexalink_rate,mean_familiarity,familiarity_source,source_version,source_package_version,source_revision,normalization_version,fallback_used
+familiarityCurve,restrictive,REGULAR,83.22,0.1,0.3,0.22273059861850059,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+familiarityCurve,baseline,REGULAR,86.84,0.17,0.31,0.30115838892708574,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+familiarityCurve,permissive,REGULAR,84.1,0.08,0.19,0.40349187509477463,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false

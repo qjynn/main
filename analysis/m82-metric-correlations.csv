@@ -1,0 +1,67 @@
+mathematical_metric,synthetic_metric,model,spearman,n,interpretation,familiarity_source,source_version,normalization_version,fallback_used
+raw_legal_moves,gold_rate,REGULAR,0.4787995198079231,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+raw_legal_moves,gold_rate,STRONG,0.6936374549819928,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+raw_legal_moves,median_score,REGULAR,0.507515006002401,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+raw_legal_moves,median_score,STRONG,0.6266986794717887,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+raw_legal_moves,mean_score,REGULAR,0.5435294117647058,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+raw_legal_moves,mean_score,STRONG,0.6466746698679472,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+unique_playable_words,gold_rate,REGULAR,0.5242256902761104,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_playable_words,gold_rate,STRONG,0.6213205282112846,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+unique_playable_words,median_score,REGULAR,0.5426650660264105,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_playable_words,median_score,STRONG,0.6145978391356542,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+unique_playable_words,mean_score,REGULAR,0.5821368547418968,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_playable_words,mean_score,STRONG,0.6184393757503002,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+unique_skeletons,gold_rate,REGULAR,0.4777430972388955,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_skeletons,gold_rate,STRONG,0.6102761104441776,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+unique_skeletons,median_score,REGULAR,0.5236494597839136,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_skeletons,median_score,STRONG,0.5973109243697479,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_skeletons,mean_score,REGULAR,0.5502521008403362,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_skeletons,mean_score,STRONG,0.5978871548619448,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_tile_masks,gold_rate,REGULAR,0.4073469387755102,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_tile_masks,gold_rate,STRONG,0.6364945978391356,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+unique_tile_masks,median_score,REGULAR,0.4673709483793518,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_tile_masks,median_score,STRONG,0.5883793517406963,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_tile_masks,mean_score,REGULAR,0.5010804321728691,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+unique_tile_masks,mean_score,STRONG,0.6048019207683073,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+solver_relevant_moves,gold_rate,REGULAR,0.4073469387755102,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+solver_relevant_moves,gold_rate,STRONG,0.6364945978391356,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+solver_relevant_moves,median_score,REGULAR,0.4673709483793518,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+solver_relevant_moves,median_score,STRONG,0.5883793517406963,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+solver_relevant_moves,mean_score,REGULAR,0.5010804321728691,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+solver_relevant_moves,mean_score,STRONG,0.6048019207683073,50,strong,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_move_count,gold_rate,REGULAR,0.13968787515005998,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_move_count,gold_rate,STRONG,-0.0007202881152461593,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_move_count,median_score,REGULAR,0.13306122448979596,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_move_count,median_score,STRONG,0.04307322929171664,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_move_count,mean_score,REGULAR,0.08187274909963982,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_move_count,mean_score,STRONG,0.06036014405762302,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_participation_pct,gold_rate,REGULAR,-0.15707082833133246,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_participation_pct,gold_rate,STRONG,-0.4080192076830733,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_participation_pct,median_score,REGULAR,-0.1904921968787514,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_participation_pct,median_score,STRONG,-0.3433853541416567,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_participation_pct,mean_score,REGULAR,-0.21911164465786315,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_participation_pct,mean_score,STRONG,-0.32552220888355343,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_rows_touched,gold_rate,REGULAR,-0.08581032412965195,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_rows_touched,gold_rate,STRONG,-0.1683073229291716,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_rows_touched,median_score,REGULAR,-0.13229291716686675,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_rows_touched,median_score,STRONG,-0.17618247298919565,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_rows_touched,mean_score,REGULAR,-0.1404561824729893,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_rows_touched,mean_score,STRONG,-0.17080432172869142,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_columns_touched,gold_rate,REGULAR,-0.28509003601440575,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_columns_touched,gold_rate,STRONG,-0.14698679471788711,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_columns_touched,median_score,REGULAR,-0.2485954381752702,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_columns_touched,median_score,STRONG,-0.1880912364945979,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_columns_touched,mean_score,REGULAR,-0.2519567827130853,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_columns_touched,mean_score,STRONG,-0.17128451380552212,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_diagonal_steps,gold_rate,REGULAR,-0.34962785114045625,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_diagonal_steps,gold_rate,STRONG,-0.2976710684273709,50,weak/no relationship,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_diagonal_steps,median_score,REGULAR,-0.3863145258103242,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_diagonal_steps,median_score,STRONG,-0.3159183673469388,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_diagonal_steps,mean_score,REGULAR,-0.3610564225690276,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+hexalink_diagonal_steps,mean_score,STRONG,-0.3206242496998799,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+enumeration_ms,gold_rate,REGULAR,0.32965186074429775,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+enumeration_ms,gold_rate,STRONG,0.5439135654261704,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+enumeration_ms,median_score,REGULAR,0.3653781512605042,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+enumeration_ms,median_score,STRONG,0.4960864345738295,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+enumeration_ms,mean_score,REGULAR,0.4047539015606243,50,moderate,wordfreq,v3.2,zipf-linear-v1,false
+enumeration_ms,mean_score,STRONG,0.5148139255702281,50,moderate,wordfreq,v3.2,zipf-linear-v1,false

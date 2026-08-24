@@ -1,0 +1,13 @@
+model,metric,view_a,view_b,sameBandPct,sameOrAdjacentBandPct,majorMovementPct,n,familiarity_source,source_version,normalization_version,fallback_used
+REGULAR,gold_rate,A,B,0.72,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+REGULAR,gold_rate,A,C,0.72,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+REGULAR,median_score,A,B,0.72,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+REGULAR,median_score,A,C,0.6,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+REGULAR,mean_score,A,B,0.72,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+REGULAR,mean_score,A,C,0.76,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+STRONG,gold_rate,A,B,0.76,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+STRONG,gold_rate,A,C,0.86,0.98,0.02,50,wordfreq,v3.2,zipf-linear-v1,false
+STRONG,median_score,A,B,0.68,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+STRONG,median_score,A,C,0.8,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+STRONG,mean_score,A,B,0.72,1,0,50,wordfreq,v3.2,zipf-linear-v1,false
+STRONG,mean_score,A,C,0.84,1,0,50,wordfreq,v3.2,zipf-linear-v1,false

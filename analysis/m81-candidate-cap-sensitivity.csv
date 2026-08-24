@@ -1,0 +1,7 @@
+parameter,setting,model,mean_score,gold_rate,hexalink_rate,mean_familiarity,familiarity_source,source_version,source_package_version,source_revision,normalization_version,fallback_used
+candidateCap,8,REGULAR,81.8,0.03,0.12,0.2984828113159306,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+candidateCap,12,REGULAR,86.14,0.13,0.27,0.301420837706638,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+candidateCap,18,REGULAR,86.84,0.17,0.31,0.30115838892708574,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+candidateCap,25,REGULAR,86.57,0.16,0.31,0.30226506797288555,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+candidateCap,40,REGULAR,86.57,0.16,0.31,0.30226506797288555,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false
+candidateCap,60,REGULAR,86.57,0.16,0.31,0.30226506797288555,wordfreq,v3.2,3.1.1,42233e6c36ce792031bcccfa17cdd0cec9af5fa7,zipf-linear-v1,false

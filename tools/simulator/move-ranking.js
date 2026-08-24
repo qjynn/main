@@ -1,12 +1,22 @@
 const { applyMove } = require('../solver/state-search.js');
-const { getWordAccessibility } = require('./player-models.js');
+const { M81_FREQUENCY_MODEL } = require('./player-models.js');
 
 function scoreCandidate(item, state, solverContext, model, options = {}) {
   const applied = applyMove(state, item.move, solverContext.context);
   const remaining = solverContext.compatibleMovesFor(applied.state.usedMask).length;
-  const lineProgress = (applied.scoredMove.rowBonus + applied.scoredMove.columnBonus) / 20;
+  const lineProgress = Math.min(1, (applied.scoredMove.rowBonus + applied.scoredMove.columnBonus) / 30);
   const flexibility = Math.min(1, remaining / 100);
   const hexalink = item.move.isHexalink ? (options.recognizedHexalink ? 1 : 0) : 0;
+  if (options.accessibilitySystem === M81_FREQUENCY_MODEL) {
+    return {
+      ...item,
+      applied,
+      attractiveness: model.decision.scoreWeight * Math.min(1, applied.scoreDelta / 60) +
+        model.decision.familiarityWeight * item.accessibility.knownProbability +
+        model.decision.coverageWeight * lineProgress +
+        model.decision.flexibilityWeight * flexibility + hexalink * 0.2
+    };
+  }
   return {
     ...item,
     applied,

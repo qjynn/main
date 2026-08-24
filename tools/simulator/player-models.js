@@ -1,5 +1,7 @@
-const SIMULATOR_VERSION = 'm8.0';
-const PLAYER_MODEL_VERSION = 'm8.players.0';
+const SIMULATOR_VERSION = 'm8.1';
+const PLAYER_MODEL_VERSION = 'm8.1.players.0';
+const M8_HEURISTIC_BASELINE = 'M8_HEURISTIC_BASELINE';
+const M81_FREQUENCY_MODEL = 'M81_FREQUENCY_MODEL';
 
 const MODEL_CONFIGS = Object.freeze({
   CASUAL: {
@@ -44,6 +46,14 @@ const MODEL_CONFIGS = Object.freeze({
   }
 });
 
+const FREQUENCY_CURVES = Object.freeze({
+  CASUAL: { midpoint: 0.7, slope: 4.2, ceiling: 0.76, floor: 0.02 },
+  REGULAR: { midpoint: 0.58, slope: 4.8, ceiling: 0.88, floor: 0.04 },
+  STRONG: { midpoint: 0.45, slope: 5.2, ceiling: 0.96, floor: 0.06 },
+  EXPERT: { midpoint: 0.32, slope: 5.5, ceiling: 0.995, floor: 0.08 },
+  ORACLE: { midpoint: 0, slope: 1, ceiling: 1, floor: 1 }
+});
+
 function mergeConfig(base, override = {}) {
   return {
     ...base,
@@ -57,8 +67,9 @@ function mergeConfig(base, override = {}) {
 
 function resolvePlayerModel(model = 'REGULAR', overrides = {}) {
   const name = typeof model === 'string' ? model.toUpperCase() : model.name?.toUpperCase();
-  if (!MODEL_CONFIGS[name]) throw new Error(`Unknown player model: ${name}`);
-  return Object.freeze(mergeConfig(MODEL_CONFIGS[name], typeof model === 'object' ? model : overrides));
+  const modelName = name === M8_HEURISTIC_BASELINE || name === M81_FREQUENCY_MODEL ? 'REGULAR' : name;
+  if (!MODEL_CONFIGS[modelName]) throw new Error(`Unknown player model: ${name}`);
+  return Object.freeze(mergeConfig({ ...MODEL_CONFIGS[modelName], name: modelName }, typeof model === 'object' ? model : overrides));
 }
 
 function normalizeWord(word) {
@@ -77,22 +88,44 @@ function fallbackAccessibility(word, model, options = {}) {
   return Math.max(0.05, Math.min(0.98, score * (0.72 + model.vocabularyAccess * 0.3)));
 }
 
+function mapFamiliarityToRecognition(familiarityScore, playerModel, wordLength, options = {}) {
+  const model = resolvePlayerModel(playerModel);
+  const curve = { ...FREQUENCY_CURVES[model.name], ...(options.curveOverrides?.[model.name] || {}) };
+  const score = Math.max(0, Math.min(1, Number(familiarityScore) || 0));
+  const logistic = 1 / (1 + Math.exp(-curve.slope * (score - curve.midpoint)));
+  const mapped = curve.floor + (curve.ceiling - curve.floor) * logistic;
+  if (wordLength === 2) {
+    return Math.max(0, Math.min(1, mapped * 0.35 + model.twoLetterRecognition * 0.65));
+  }
+  return Math.max(0, Math.min(1, mapped));
+}
+
 function getWordAccessibility(word, playerModel, options = {}) {
   const model = resolvePlayerModel(playerModel);
   const provider = options.frequencyProvider || options.familiarityProvider;
   const normalized = normalizeWord(word);
-  if (provider) {
-    const value = provider(normalized);
-    if (Number.isFinite(value)) return { value: Math.max(0, Math.min(1, value)), basis: 'provider', rank: value };
+  if (provider && options.accessibilitySystem !== M8_HEURISTIC_BASELINE) {
+    const raw = typeof provider === 'function' ? provider(normalized) : provider.lookup(normalized);
+    if (Number.isFinite(raw)) return { value: Math.max(0, Math.min(1, raw)), knownProbability: Math.max(0, Math.min(1, raw)), familiarityScore: raw, basis: 'provider', rank: null };
+    const record = Number.isFinite(raw) ? { found: true, familiarityScore: raw, rank: null } : raw;
+    if (record?.found && Number.isFinite(record.familiarityScore)) {
+      const knownProbability = mapFamiliarityToRecognition(record.familiarityScore, model, normalized.length, options);
+      return { value: knownProbability, knownProbability, noticeProbability: null, familiarityScore: record.familiarityScore, basis: 'frequency', rank: record.rank ?? null, source: record.source, sourceVersion: record.sourceVersion, normalizationVersion: record.normalizationVersion };
+    }
   }
-  return { value: fallbackAccessibility(normalized, model, options), basis: 'heuristic', rank: null };
+  const value = fallbackAccessibility(normalized, model, options);
+  return { value, knownProbability: value, noticeProbability: null, familiarityScore: value, basis: 'heuristic', rank: null };
 }
 
 module.exports = {
   SIMULATOR_VERSION,
   PLAYER_MODEL_VERSION,
   MODEL_CONFIGS,
+  FREQUENCY_CURVES,
+  M8_HEURISTIC_BASELINE,
+  M81_FREQUENCY_MODEL,
   resolvePlayerModel,
+  mapFamiliarityToRecognition,
   getWordAccessibility,
   fallbackAccessibility
 };

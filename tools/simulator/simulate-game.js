@@ -57,6 +57,7 @@ function simulateGame(input, wordIndex, options = {}) {
   const solverContext = options.preparedContext || createSolverContext(input.puzzle, wordIndex, { moveFilter: options.moveFilter });
   let state = initialSimulationState(solverContext);
   const history = [];
+  const discoveryDiagnostics = [];
   let invalidAttempts = 0;
   let hintUsed = 0;
   let hexalinkTurn = null;
@@ -95,9 +96,11 @@ function simulateGame(input, wordIndex, options = {}) {
     });
     const newlyRecognized = recognized && !state.hexalinkRecognized;
     if (newlyRecognized) state = { ...state, hexalinkRecognized: true };
-    const candidates = newlyRecognized
-      ? discoverMoves({ solverContext, state, playerModel: model, rng, options, recognizedHexalink: true }).moves
-      : discovered.moves;
+    const recognizedDiscovery = newlyRecognized
+      ? discoverMoves({ solverContext, state, playerModel: model, rng, options, recognizedHexalink: true })
+      : discovered;
+    const candidates = recognizedDiscovery.moves;
+    discoveryDiagnostics.push({ turn: state.turnsUsed + 1, legalMovesAvailable: recognizedDiscovery.availableCount, estimatedKnownMoves: recognizedDiscovery.estimatedKnownMoves, sampledMoves: recognizedDiscovery.sampledMoves, noticedMoves: recognizedDiscovery.noticedMoves, rankedMoves: 0 });
     if (!candidates.length || rng() < model.invalidAttemptProbability) {
       invalidAttempts++;
       state = { ...state, turnsUsed: state.turnsUsed + 1 };
@@ -107,6 +110,7 @@ function simulateGame(input, wordIndex, options = {}) {
     }
     const decision = rankMoves(candidates, state, solverContext, model, rng, { ...options, recognizedHexalink: state.hexalinkRecognized });
     nodesEvaluated += decision.nodes;
+    discoveryDiagnostics.at(-1).rankedMoves = decision.ranked.length;
     if (!decision.selected) continue;
     const applied = decision.selected.applied;
     state = { ...applied.state, score: state.score + applied.scoreDelta, hexalinkRecognized: state.hexalinkRecognized, hexalinkFound: state.hexalinkFound || decision.selected.move.isHexalink, hintClicks: state.hintClicks };
@@ -142,7 +146,12 @@ function simulateGame(input, wordIndex, options = {}) {
       model: model.name,
       simulationSeed: seed,
       familiarityBasis: options.frequencyProvider || options.familiarityProvider ? 'provider' : 'heuristic',
+      accessibilitySystem: options.accessibilitySystem || 'M8_HEURISTIC_BASELINE',
+      familiarityProvider: options.familiarityProvider?.metadata?.provider || options.frequencyProvider?.metadata?.provider || null,
+      familiaritySourceVersion: options.familiarityProvider?.metadata?.sourceVersion || options.frequencyProvider?.metadata?.sourceVersion || null,
+      familiarityNormalizationVersion: options.familiarityProvider?.metadata?.normalizationVersion || options.frequencyProvider?.metadata?.normalizationVersion || null,
       lookaheadNodes: nodesEvaluated,
+      discoveryDiagnostics,
       trace
     }
   };
